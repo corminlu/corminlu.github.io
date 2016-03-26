@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-03-26T12:44:13.352Z</updated>
+  <updated>2016-03-26T13:05:36.749Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://corminlu.github.io/2016/03/26/hexo-config/"/>
+    <id>http://corminlu.github.io/2016/03/26/hexo-config/</id>
+    <published>2016-03-26T13:05:36.749Z</published>
+    <updated>2016-03-26T13:05:36.749Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误</title>
