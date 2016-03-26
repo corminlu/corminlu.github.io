@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>开启Hexo静态博客之旅 | Cormin Lu&#39;s Blog</title>
+  <title>Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误 | Cormin Lu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。">
+  <meta name="description" content="在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开启Hexo静态博客之旅">
-<meta property="og:url" content="http://corminlu.github.io/2016/03/26/start-static-blog-with-hexo/index.html">
+<meta property="og:title" content="Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误">
+<meta property="og:url" content="http://corminlu.github.io/2016/03/26/hexo-deploy-error-dev-tty-on-windows/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
-<meta property="og:description" content="很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。">
-<meta property="og:updated_time" content="2016-03-26T12:36:07.614Z">
+<meta property="og:description" content="在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：">
+<meta property="og:updated_time" content="2016-03-26T12:44:13.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开启Hexo静态博客之旅">
-<meta name="twitter:description" content="很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。">
+<meta name="twitter:title" content="Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误">
+<meta name="twitter:description" content="在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：">
   
     <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
   
@@ -155,11 +155,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-start-static-blog-with-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-hexo-deploy-error-dev-tty-on-windows" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/26/start-static-blog-with-hexo/" class="article-date">
-  	<time datetime="2016-03-26T11:00:00.000Z" itemprop="datePublished">2016-03-26</time>
+      <a href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/" class="article-date">
+  	<time datetime="2016-03-26T12:25:00.000Z" itemprop="datePublished">2016-03-26</time>
 </a>
     </div>
   
@@ -172,7 +172,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      开启Hexo静态博客之旅
+      Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误
     </h1>
   
 
@@ -192,18 +192,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。<br><a id="more"></a></p>
-<p>最开始<strong>第一个博客</strong>用WordPress搭建，放在国外空间，某一天突然空间被wall也没有去管，直到域名空间过期最后内容全失。</p>
-<blockquote>
-<p>缺点：即要维护臃肿的博客系统，又要考虑域名及空间，随时打补丁升级</p>
-</blockquote>
-<p>接着<strong>第二个博客</strong>图省事直接使用博客平台，而且用了很长一段时间，直到后来上面各种文章泛滥，也很久没有去登录了。</p>
-<blockquote>
-<p>缺点：灵活性、可定制性差</p>
-</blockquote>
-<p>上面两个博客共同缺点是：需要是在电脑上排版，要耗费较多时间，而且也不方便。</p>
-<p>后面干脆直接在手机上装evernote随便记录一下，直到发现Markdown以及静态博客系统，使用简单且不用担心排版以及维护的问题。对比了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>/<a href="https://ghost.org/" target="_blank" rel="external">Ghost</a>/<a href="http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a>/<a href="http://octopress.org/" target="_blank" rel="external">Octoress</a>，最终选择了Hexo，部署在<a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>上面简单又省事。</p>
-<p>Hexo装了有一段时间了，直到现在总算逮到一点时间，就先开个头吧，但愿能好好坚持下去。</p>
+        <p>在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FATAL bash: /dev/tty: No such device or address</span><br><span class="line">error: failed to execute prompt script (<span class="built_in">exit</span> code 1)</span><br><span class="line">fatal: could not <span class="built_in">read</span> Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: Invalid argument</span><br><span class="line"></span><br><span class="line">Error: bash: /dev/tty: No such device or address</span><br><span class="line">error: failed to execute prompt script (<span class="built_in">exit</span> code 1)</span><br><span class="line">fatal: could not <span class="built_in">read</span> Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: Invalid argument</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (...\node_modules\hexo-util\lib\spawn.js:37:17)</span><br><span class="line">    at emitTwo (events.js:100:13)</span><br><span class="line">    at ChildProcess.emit (events.js:185:7)</span><br><span class="line">    at ChildProcess.cp.emit (...\node_modules\cross-spawn-async\lib\enoent.js:37:29)</span><br><span class="line">    at maybeClose (internal/child_process.js:850:16)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)</span><br></pre></td></tr></table></figure></p>
+<p>然后搜到一个解决方案：<a href="https://www.gehaowu.com/notes/2015/09/MINGW64-HEXO-TTY-ERROR/" target="_blank" rel="external">MINGW64环境更新HEXO到Github提示TTY错误</a>，然而我并没有装那个100多M的Github终端，但我有<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git for Windows</a> 2.7+，就试着打开Git Bash(git-bash.exe)然后输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> d</span><br></pre></td></tr></table></figure></p>
+<p>成功发布</p>
 
       
     </div>
@@ -213,15 +204,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误
-        
-      </div>
-    </a>
   
+    <a href="/2016/03/26/start-static-blog-with-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开启Hexo静态博客之旅</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 

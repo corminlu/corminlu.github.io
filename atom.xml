@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-03-26T12:20:28.527Z</updated>
+  <updated>2016-03-26T12:44:13.352Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -16,11 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误</title>
+    <link href="http://corminlu.github.io/2016/03/26/hexo-deploy-error-dev-tty-on-windows/"/>
+    <id>http://corminlu.github.io/2016/03/26/hexo-deploy-error-dev-tty-on-windows/</id>
+    <published>2016-03-26T12:25:00.000Z</published>
+    <updated>2016-03-26T12:44:13.352Z</updated>
+    
+    <content type="html">&lt;p&gt;在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;FATAL bash: /dev/tty: No such device or address&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;error: failed to execute prompt script (&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; code 1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fatal: could not &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; Username &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;https://github.com&#39;&lt;/span&gt;: Invalid argument&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Error: bash: /dev/tty: No such device or address&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;error: failed to execute prompt script (&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; code 1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fatal: could not &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; Username &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;https://github.com&#39;&lt;/span&gt;: Invalid argument&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at ChildProcess.&amp;lt;anonymous&amp;gt; (...\node_modules\hexo-util\lib\spawn.js:37:17)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at emitTwo (events.js:100:13)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at ChildProcess.emit (events.js:185:7)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at ChildProcess.cp.emit (...\node_modules\cross-spawn-async\lib\enoent.js:37:29)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at maybeClose (internal/child_process.js:850:16)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后搜到一个解决方案：&lt;a href=&quot;https://www.gehaowu.com/notes/2015/09/MINGW64-HEXO-TTY-ERROR/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MINGW64环境更新HEXO到Github提示TTY错误&lt;/a&gt;，然而我并没有装那个100多M的Github终端，但我有&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git for Windows&lt;/a&gt; 2.7+，就试着打开Git Bash(git-bash.exe)然后输入：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$hexo&lt;/span&gt; d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;成功发布&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="http://corminlu.github.io/tags/blog/"/>
+    
+      <category term="Hexo" scheme="http://corminlu.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>开启Hexo静态博客之旅</title>
     <link href="http://corminlu.github.io/2016/03/26/start-static-blog-with-hexo/"/>
     <id>http://corminlu.github.io/2016/03/26/start-static-blog-with-hexo/</id>
-    <published>2016-03-25T16:00:00.000Z</published>
-    <updated>2016-03-26T12:20:28.527Z</updated>
+    <published>2016-03-26T11:00:00.000Z</published>
+    <updated>2016-03-26T12:36:07.614Z</updated>
     
     <content type="html">&lt;p&gt;很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最开始&lt;strong&gt;第一个博客&lt;/strong&gt;用WordPress搭建，放在国外空间，某一天突然空间被wall也没有去管，直到域名空间过期最后内容全失。&lt;/p&gt;
@@ -43,9 +68,9 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://corminlu.github.io/tags/Hexo/"/>
-    
       <category term="blog" scheme="http://corminlu.github.io/tags/blog/"/>
+    
+      <category term="Hexo" scheme="http://corminlu.github.io/tags/Hexo/"/>
     
   </entry>
   
