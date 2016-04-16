@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>chocolatey：windows下的包管理工具 | Cormin Lu&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在软件开发领域，经常会用到一些开源/第三方的库，.Net有NuGet，node有npm，objc有CocoaPods，java有maven/gradle等，有了这些包管理工具来对引用的库进行管理，添加、移除和更新库变得非常简单方便。
+而在系统软件管理方面，用惯了Mac一定离不开Homebrew，而习惯Ubuntu/CentOS也一定离不开apt-get/yum，非Windows系统都有自己的软件包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chocolatey：windows下的包管理工具">
+<meta property="og:url" content="http://corminlu.github.io/2016/04/16/chocolatey-windows-package-manager/index.html">
+<meta property="og:site_name" content="Cormin Lu's Blog">
+<meta property="og:description" content="在软件开发领域，经常会用到一些开源/第三方的库，.Net有NuGet，node有npm，objc有CocoaPods，java有maven/gradle等，有了这些包管理工具来对引用的库进行管理，添加、移除和更新库变得非常简单方便。
+而在系统软件管理方面，用惯了Mac一定离不开Homebrew，而习惯Ubuntu/CentOS也一定离不开apt-get/yum，非Windows系统都有自己的软件包">
+<meta property="og:updated_time" content="2016-04-16T11:16:29.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chocolatey：windows下的包管理工具">
+<meta name="twitter:description" content="在软件开发领域，经常会用到一些开源/第三方的库，.Net有NuGet，node有npm，objc有CocoaPods，java有maven/gradle等，有了这些包管理工具来对引用的库进行管理，添加、移除和更新库变得非常简单方便。
+而在系统软件管理方面，用惯了Mac一定离不开Homebrew，而习惯Ubuntu/CentOS也一定离不开apt-get/yum，非Windows系统都有自己的软件包">
+  
+    <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://avatars3.githubusercontent.com/u/1397003?v=3&s=140">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cormin Lu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">坐井观天</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 10px;">aspnet</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 10px;">dev</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cormin Lu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cormin Lu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">坐井观天</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-chocolatey-windows-package-manager" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/16/chocolatey-windows-package-manager/" class="article-date">
+  	<time datetime="2016-04-16T10:07:15.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chocolatey：windows下的包管理工具
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chocolatey/">chocolatey</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在软件开发领域，经常会用到一些开源/第三方的库，.Net有NuGet，node有npm，objc有CocoaPods，java有maven/gradle等，有了这些包管理工具来对引用的库进行管理，添加、移除和更新库变得非常简单方便。</p>
+<p>而在系统软件管理方面，用惯了Mac一定离不开Homebrew，而习惯Ubuntu/CentOS也一定离不开apt-get/yum，非Windows系统都有自己的软件包管理工具，而Windows下只有各种管家…</p>
+<p>实际上Windows下面也有很多类似的工具，个人觉得做的最好的是<a href="https://chocolatey.org/" target="_blank" rel="external">Chocolatey</a>。<br><a id="more"></a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>如果需要自定义<strong>安装的位置</strong>，需要设置环境变量（系统变量）：<strong>ChocolateyInstall</strong>设置为自定义目录如<em>D:\Choco</em>。</p>
+<p>以下命令需要使用管理员身份运行</p>
+<p><strong>使用cmd命令行</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@powershell -NoProfile -ExecutionPolicy unrestricted -Command &quot;(iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))) &gt;$null 2&gt;&amp;1&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用PowerShell</strong></p>
+<p>首先得更改运行策略<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy Unrestricted</span><br></pre></td></tr></table></figure></p>
+<p>接着再运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;)))&gt;$null 2&gt;&amp;1</span><br></pre></td></tr></table></figure></p>
+<p>另外还支持通过NuGet安装，更具体请看<a href="https://github.com/chocolatey/choco/wiki/Installation" target="_blank" rel="external">官方文档</a></p>
+<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><p>可以在<a href="https://chocolatey.org/packages" target="_blank" rel="external">官方源</a>上面找有没有对应的包，或者通过命令来搜索包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco search git</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>choco install</code>命令或者它的缩写<code>cinst</code>来安装软件，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">choco install git.install</span><br><span class="line">choco install git -s &quot;https://somewhere/out/there&quot;</span><br><span class="line">choco install &lt;path/to/nuspec&gt;</span><br><span class="line">choco install &lt;path/to/nupkg&gt;</span><br></pre></td></tr></table></figure></p>
+<p>支持通过包名称、自定义源、nupkg文件来安装，具体见<a href="https://github.com/chocolatey/choco/wiki/CommandsInstall" target="_blank" rel="external">安装参数</a></p>
+<h2 id="自定义安装路径"><a href="#自定义安装路径" class="headerlink" title="自定义安装路径"></a>自定义安装路径</h2><p>这个使用起来比较麻烦，需要先知道软件包的类型然后才能根据参数来安装到自定义路径。</p>
+<p><strong>MSI类型的软件</strong></p>
+<p>powershell<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install nodejs.install -y -verbose --force -ia &apos; INSTALLDIR=&quot;&quot;D:\Program Files\nodejs&quot;&quot;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>cmd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install nodejs.install -y -verbose --force -ia &quot; INSTALLDIR=&quot;&quot;D:\Program Files\nodejs&quot;&quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>NSIS类型的软件</strong></p>
+<p>powershell<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install git.install -y -verbose --force -ia &apos;/D=&quot;&quot;E:\Program Files\dev\Git\&quot;&quot;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>cmd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install git.install -y -verbose --force -ia &quot;/D=&quot;&quot;E:\Program Files\dev\Git\&quot;&quot;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果软件包本身不支持自定义路径就没办法了，希望以后的版本可以更加智能吧。</p>
+<h1 id="更新-维护软件"><a href="#更新-维护软件" class="headerlink" title="更新/维护软件"></a>更新/维护软件</h1><p>列出所有choco安装的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco list -lo</span><br></pre></td></tr></table></figure></p>
+<p>列出过期的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco outdated</span><br></pre></td></tr></table></figure></p>
+<p>更新所有包(all代表所有包)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco upgrade all</span><br></pre></td></tr></table></figure></p>
+<p>卸载包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco uninstall git</span><br></pre></td></tr></table></figure></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>为了避免没有权限导致的安装失败，最好用管理员权限运行命令。</p>
+<p>另外网络问题可能会导致下载失败，一般可以通过设置系统代理来解决，参考<a href="https://github.com/chocolatey/choco/wiki/Proxy-Settings-for-Chocolatey" target="_blank" rel="external">官方代理设置说明</a>。</p>
+<p>实在下载不下来，或者安装不了的，只能尝试手动安装了，干脆选择用xx管家也可以。</p>
+<p>有些时候更新失败会出现已安装的包莫名其妙的少了几个，只能通过重新install来安装这些包。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>如果想在windows体验其他系统的环境/包管理，可以选择Cygwin/MINGW/MSYS2等，可以用来体验linux系统的shell，另外还可以选择Docker，使用起来非常方便，最近刚出来的<strong>Bash on Ubuntu on Windows</strong>就是一个docker镜像。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/16/run-aspnet-5-on-centos/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在CentOS上运行Asp.Net 5</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'corminlu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+        <div class="copy-right clearfix">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></div>
+        <div class="footer-left">
+    		&copy; 2016 <a href="http://corminlu.github.io">Cormin Lu</a>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-04-16T09:37:57.068Z</updated>
+  <updated>2016-04-16T11:16:29.756Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chocolatey：windows下的包管理工具</title>
+    <link href="http://corminlu.github.io/2016/04/16/chocolatey-windows-package-manager/"/>
+    <id>http://corminlu.github.io/2016/04/16/chocolatey-windows-package-manager/</id>
+    <published>2016-04-16T10:07:15.000Z</published>
+    <updated>2016-04-16T11:16:29.756Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在软件开发领域，经常会用到一些开源/第三方的库，.Net有NuGet，node有npm，objc有CocoaPods，java有maven/gradle等，有了这些包管理工具来对引用的库进行管理，添加、移除和更新库变得非常简单方便。&lt;/p&gt;
+&lt;p&gt;而在系统软件管理方面，用惯了Mac一定离不开Homebrew，而习惯Ubuntu/CentOS也一定离不开apt-get/yum，非Windows系统都有自己的软件包管理工具，而Windows下只有各种管家…&lt;/p&gt;
+&lt;p&gt;实际上Windows下面也有很多类似的工具，个人觉得做的最好的是&lt;a href=&quot;https://chocolatey.org/&quot;&gt;Chocolatey&lt;/a&gt;。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="chocolatey" scheme="http://corminlu.github.io/tags/chocolatey/"/>
+    
+  </entry>
   
   <entry>
     <title>在CentOS上运行Asp.Net 5</title>
