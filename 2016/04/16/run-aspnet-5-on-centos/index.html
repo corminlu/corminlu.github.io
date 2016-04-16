@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>在CentOS上运行Asp.Net 5 | Cormin Lu&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注意：本文内容主要针对DNX，不适用于Asp.Net Core 1.0 RC2以上版本
+从dnx1.0.0-beta4开始，开发的应用已经在CentOS上稳定运行了将近一年，资源占用极小而且稳定性也相当不错，除了dnx版本升级以外，基本上不需要什么维护。
+目前服务器上的dnx版本停留在1.0.0-rc1-update2，官方的RC2做了大量的改变而且可用性也很不好，所以目前暂时也没有升级的打算。从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在CentOS上运行Asp.Net 5">
+<meta property="og:url" content="http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/index.html">
+<meta property="og:site_name" content="Cormin Lu's Blog">
+<meta property="og:description" content="注意：本文内容主要针对DNX，不适用于Asp.Net Core 1.0 RC2以上版本
+从dnx1.0.0-beta4开始，开发的应用已经在CentOS上稳定运行了将近一年，资源占用极小而且稳定性也相当不错，除了dnx版本升级以外，基本上不需要什么维护。
+目前服务器上的dnx版本停留在1.0.0-rc1-update2，官方的RC2做了大量的改变而且可用性也很不好，所以目前暂时也没有升级的打算。从">
+<meta property="og:updated_time" content="2016-04-16T09:35:31.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在CentOS上运行Asp.Net 5">
+<meta name="twitter:description" content="注意：本文内容主要针对DNX，不适用于Asp.Net Core 1.0 RC2以上版本
+从dnx1.0.0-beta4开始，开发的应用已经在CentOS上稳定运行了将近一年，资源占用极小而且稳定性也相当不错，除了dnx版本升级以外，基本上不需要什么维护。
+目前服务器上的dnx版本停留在1.0.0-rc1-update2，官方的RC2做了大量的改变而且可用性也很不好，所以目前暂时也没有升级的打算。从">
+  
+    <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://avatars3.githubusercontent.com/u/1397003?v=3&s=140">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cormin Lu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">坐井观天</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 10px;">aspnet</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/dev/" style="font-size: 10px;">dev</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cormin Lu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cormin Lu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">坐井观天</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-run-aspnet-5-on-centos" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/16/run-aspnet-5-on-centos/" class="article-date">
+  	<time datetime="2016-04-16T08:10:04.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在CentOS上运行Asp.Net 5
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>注意：本文内容主要针对DNX，不适用于Asp.Net Core 1.0 RC2以上版本</em></p>
+<p>从dnx1.0.0-beta4开始，开发的应用已经在CentOS上稳定运行了将近一年，资源占用极小而且稳定性也相当不错，除了dnx版本升级以外，基本上不需要什么维护。</p>
+<p>目前服务器上的dnx版本停留在1.0.0-rc1-update2，官方的RC2做了大量的改变而且可用性也很不好，所以目前暂时也没有升级的打算。从RC2版本开始，安装配置的过程也大不相同，所以本文只记录目前使用的版本的配置过程。</p>
+<a id="more"></a>
+<h1 id="安装Mono"><a href="#安装Mono" class="headerlink" title="安装Mono"></a>安装Mono</h1><p>导入Mono签名密钥以及库（需要使用管理员root身份）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install yum-utils</span><br><span class="line">sudo rpm --import &quot;http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF&quot;</span><br><span class="line">sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/</span><br></pre></td></tr></table></figure></p>
+<p>不同的系统安装的方式也不一样，具体见<a href="http://www.mono-project.com/docs/getting-started/install/linux/#centos-7-fedora-19-and-later-and-derivatives" target="_blank" rel="external">Mono官网安装说明</a></p>
+<p>安装Mono<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mono-complete</span><br></pre></td></tr></table></figure></p>
+<p>建议使用<strong>mono-complete</strong>完整的包，而不是功能很少的<em>mono-devel</em>或者<em>mono</em>，避免坑了自己。</p>
+<p>Mono默认不信任任何SSL证书，如果访问https资源出现问题，可能还需要导入Mozilla的信任证书列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mozroots --import --sync</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装libuv"><a href="#安装libuv" class="headerlink" title="安装libuv"></a>安装libuv</h1><p><a href="https://github.com/aspnet/KestrelHttpServer" target="_blank" rel="external">kestrel</a>运行依赖于libuv，所以需要安装</p>
+<p>先安装编译工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install gcc automake libtool</span><br></pre></td></tr></table></figure></p>
+<p>建议从github找到最新的release来安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://github.com/libuv/libuv/archive/v1.9.0.tar.gz | sudo tar zxfv - -C /usr/local/src</span><br><span class="line">cd /usr/local/src/libuv-1.9.0</span><br><span class="line">sh autogen.sh</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">rm -rf /usr/local/src/libuv-1.9.0 &amp;&amp; cd ~/</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure></p>
+<p>有可能还需要创建软链接(如果/usr/lib目录没有libuv.so的话)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/lib/libuv.so /usr/lib/libuv.so</span><br></pre></td></tr></table></figure></p>
+<p>另外需要注意：早期kestrel使用libuv.so.1，现在已经改成libuv.so，所以不要被一些过期的文章给误导了</p>
+<h1 id="安装-Net版本管理器-DNVM-及DNX"><a href="#安装-Net版本管理器-DNVM-及DNX" class="headerlink" title="安装.Net版本管理器(DNVM)及DNX"></a>安装.Net版本管理器(DNVM)及DNX</h1><p>首先需要安装<code>unzip</code>，如果没有系统里面的话：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install unzip</span><br></pre></td></tr></table></figure></p>
+<p>下载并安装DNVM：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh &amp;&amp; source ~/.dnx/dnvm/dnvm.sh</span><br></pre></td></tr></table></figure></p>
+<p>安装DNX：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnvm upgrade</span><br></pre></td></tr></table></figure></p>
+<p>默认情况下会安装最新版的基于Mono的dnx</p>
+<h1 id="编译及发布"><a href="#编译及发布" class="headerlink" title="编译及发布"></a>编译及发布</h1><p>编译工作直接在Windows上进行，如果有哪项功能造成编译或运行失败，可能就是因为dnx版本升级导致的API变更，直接对比一下官方对应版本的<a href="https://github.com/aspnet/Home" target="_blank" rel="external">samples</a>代码一般都能找到正确的使用方法，或者在<a href="https://github.com/aspnet/Announcements" target="_blank" rel="external">Announcements</a>的Issue里面会列出重大的变更。<br>对应的framework我目前还是使用dnx451，dnx452和dnx46使用mono可能会运行不起来，除了不能使用C#6语法外没别的影响。</p>
+<p>代码使用Visual Studio进行发布，为了便于更新，勾选<strong>Compile source files into NuGet packages</strong>选项。<br>发布成功之后会有以下目录：</p>
+<ul>
+<li>approot 代码编译后的NuGet包目录</li>
+<li>wwwroot web资源文件夹</li>
+<li>logs 日志，没什么用</li>
+</ul>
+<p>进入approot，删除以下：</p>
+<ul>
+<li>web.cmd 文件</li>
+<li>runtimes 目录，发布后的runtime是windows，我们需要在centos运行，所以不需要它</li>
+</ul>
+<p>接着修改web文件，我的最新版web文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">SOURCE=&quot;$&#123;BASH_SOURCE[0]&#125;&quot;</span><br><span class="line">while [ -h &quot;$SOURCE&quot; ]; do # resolve $SOURCE until the file is no longer a symlink</span><br><span class="line">  DIR=&quot;$( cd -P &quot;$( dirname &quot;$SOURCE&quot; )&quot; &amp;&amp; pwd )&quot;</span><br><span class="line">  SOURCE=&quot;$(readlink &quot;$SOURCE&quot;)&quot;</span><br><span class="line">  [[ $SOURCE != /* ]] &amp;&amp; SOURCE=&quot;$DIR/$SOURCE&quot; # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located</span><br><span class="line">done</span><br><span class="line">DIR=&quot;$( cd -P &quot;$( dirname &quot;$SOURCE&quot; )&quot; &amp;&amp; pwd )&quot;</span><br><span class="line"></span><br><span class="line">exec &quot;~/.dnx/runtimes/dnx-mono.1.0.0-rc1-update2/bin/dnx&quot; --project &quot;$DIR/packages/MyApp/1.0.0/root&quot; --configuration Release web &quot;$@&quot;</span><br></pre></td></tr></table></figure></p>
+<p>一般只需要修改最后一行的dnx目录即可</p>
+<p>另外，web项目下的project.json需要配置好端口绑定<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"commands"</span>: &#123;</span><br><span class="line">  <span class="string">"web"</span>: <span class="string">"Microsoft.AspNet.Server.Kestrel --server.urls http://*:80"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>使用xftp把文件上传到服务器，然后用xshell登入服务器，运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./kestrel &amp;</span><br></pre></td></tr></table></figure></p>
+<p>然后直接关闭xshell即可，在浏览器里输入地址就可以看到效果了</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://github.com/aspnet/Home" target="_blank" rel="external">https://github.com/aspnet/Home</a></li>
+<li><a href="https://docs.asp.net" target="_blank" rel="external">https://docs.asp.net</a></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/26/writting-with-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo使用及语法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'corminlu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+        <div class="copy-right clearfix">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></div>
+        <div class="footer-left">
+    		&copy; 2016 <a href="http://corminlu.github.io">Cormin Lu</a>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

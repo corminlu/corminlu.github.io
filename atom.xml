@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-03-26T14:43:00.292Z</updated>
+  <updated>2016-04-16T09:35:31.858Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在CentOS上运行Asp.Net 5</title>
+    <link href="http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/"/>
+    <id>http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/</id>
+    <published>2016-04-16T08:10:04.000Z</published>
+    <updated>2016-04-16T09:35:31.858Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;注意：本文内容主要针对DNX，不适用于Asp.Net Core 1.0 RC2以上版本&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;从dnx1.0.0-beta4开始，开发的应用已经在CentOS上稳定运行了将近一年，资源占用极小而且稳定性也相当不错，除了dnx版本升级以外，基本上不需要什么维护。&lt;/p&gt;
+&lt;p&gt;目前服务器上的dnx版本停留在1.0.0-rc1-update2，官方的RC2做了大量的改变而且可用性也很不好，所以目前暂时也没有升级的打算。从RC2版本开始，安装配置的过程也大不相同，所以本文只记录目前使用的版本的配置过程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
+    
+      <category term="centos" scheme="http://corminlu.github.io/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo使用及语法</title>
