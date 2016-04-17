@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://corminlu.github.io/2016/04/17/vs-web-tools-node-version-too-lower-bug/</loc>
+    
+    <lastmod>2016-04-17T10:19:08.105Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/</loc>
     
     <lastmod>2016-04-17T04:46:35.658Z</lastmod>

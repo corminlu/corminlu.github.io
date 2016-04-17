@@ -98,7 +98,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 10px;">aspnet</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 10px;">dev</a>
+						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 10px;">aspnet</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 15px;">dev</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
 					</div>
 				</section>
 				
@@ -155,6 +155,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-vs-web-tools-node-version-too-lower-bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/17/vs-web-tools-node-version-too-lower-bug/" class="article-date">
+  	<time datetime="2016-04-17T10:06:39.000Z" itemprop="datePublished">2016-04-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/17/vs-web-tools-node-version-too-lower-bug/">Visual Studio内置Node版本过低导致Bug</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天把gulp-inject升级到4.0，结果用vs运行gulpfile任务时出现bug</p>
+<blockquote>
+<p>gulp-inject\src\inject\index.js:127</p>
+</blockquote>
+<p>折腾了半天还以为是api变更导致的问题，最后找到<a href="http://stackoverflow.com/questions/36600084/unexpected-token-error-in-task-runner/36618706" target="_blank" rel="external">StackOverflow上面有人遇到同样的问题</a>，原来是在vs运行会用<code>Common7\IDE\Extensions\Microsoft\Web Tools\External\node</code>目录下的老版本node(0.10.xx)来执行gulp任务，结果导致问题，用他<a href="https://github.com/VirtoCommerce/vc-community/issues/247#issuecomment-174454440" target="_blank" rel="external">提供的办法</a>解决了，把最新版5.1xx的路径加入到External Web Tools中即可。</p>
+<p>下次遇到需要在vs里执行需要node环境的任务时，一定要注意node版本问题，如npm/bower包管理、gulp任务等。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vs/">vs</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-chocolatey-windows-package-manager" class="article article-type-post" itemscope itemprop="blogPost">
   

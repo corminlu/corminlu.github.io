@@ -4,17 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016/4 | Cormin Lu&#39;s Blog</title>
+  <title>Visual Studio内置Node版本过低导致Bug | Cormin Lu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="没事写写博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cormin Lu's Blog">
-<meta property="og:url" content="http://corminlu.github.io/archives/2016/04/index.html">
+  <meta name="description" content="今天把gulp-inject升级到4.0，结果用vs运行gulpfile任务时出现bug
+
+gulp-inject\src\inject\index.js:127
+
+折腾了半天还以为是api变更导致的问题，最后找到StackOverflow上面有人遇到同样的问题，原来是在vs运行会用Common7\IDE\Extensions\Microsoft\Web Tools\External\node目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual Studio内置Node版本过低导致Bug">
+<meta property="og:url" content="http://corminlu.github.io/2016/04/17/vs-web-tools-node-version-too-lower-bug/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
-<meta property="og:description" content="没事写写博客">
+<meta property="og:description" content="今天把gulp-inject升级到4.0，结果用vs运行gulpfile任务时出现bug
+
+gulp-inject\src\inject\index.js:127
+
+折腾了半天还以为是api变更导致的问题，最后找到StackOverflow上面有人遇到同样的问题，原来是在vs运行会用Common7\IDE\Extensions\Microsoft\Web Tools\External\node目录">
+<meta property="og:updated_time" content="2016-04-17T10:19:08.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cormin Lu's Blog">
-<meta name="twitter:description" content="没事写写博客">
+<meta name="twitter:title" content="Visual Studio内置Node版本过低导致Bug">
+<meta name="twitter:description" content="今天把gulp-inject升级到4.0，结果用vs运行gulpfile任务时出现bug
+
+gulp-inject\src\inject\index.js:127
+
+折腾了半天还以为是api变更导致的问题，最后找到StackOverflow上面有人遇到同样的问题，原来是在vs运行会用Common7\IDE\Extensions\Microsoft\Web Tools\External\node目录">
   
     <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
   
@@ -154,115 +167,91 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-vs-web-tools-node-version-too-lower-bug" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/17/vs-web-tools-node-version-too-lower-bug/" class="archive-article-date">
-  	<time datetime="2016-04-17T10:06:39.000Z" itemprop="datePublished">Apr 17</time>
+    <div class="article-meta">
+      <a href="/2016/04/17/vs-web-tools-node-version-too-lower-bug/" class="article-date">
+  	<time datetime="2016-04-17T10:06:39.000Z" itemprop="datePublished">2016-04-17</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/17/vs-web-tools-node-version-too-lower-bug/">Visual Studio内置Node版本过低导致Bug</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Visual Studio内置Node版本过低导致Bug
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vs/">vs</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天把gulp-inject升级到4.0，结果用vs运行gulpfile任务时出现bug</p>
+<blockquote>
+<p>gulp-inject\src\inject\index.js:127</p>
+</blockquote>
+<p>折腾了半天还以为是api变更导致的问题，最后找到<a href="http://stackoverflow.com/questions/36600084/unexpected-token-error-in-task-runner/36618706" target="_blank" rel="external">StackOverflow上面有人遇到同样的问题</a>，原来是在vs运行会用<code>Common7\IDE\Extensions\Microsoft\Web Tools\External\node</code>目录下的老版本node(0.10.xx)来执行gulp任务，结果导致问题，用他<a href="https://github.com/VirtoCommerce/vc-community/issues/247#issuecomment-174454440" target="_blank" rel="external">提供的办法</a>解决了，把最新版5.1xx的路径加入到External Web Tools中即可。</p>
+<p>下次遇到需要在vs里执行需要node环境的任务时，一定要注意node版本问题，如npm/bower包管理、gulp任务等。</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/16/chocolatey-windows-package-manager/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chocolatey：windows下的包管理工具</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/16/chocolatey-windows-package-manager/" class="archive-article-date">
-  	<time datetime="2016-04-16T10:07:15.000Z" itemprop="datePublished">Apr 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/16/chocolatey-windows-package-manager/">chocolatey：windows下的包管理工具</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chocolatey/">chocolatey</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/16/run-aspnet-5-on-centos/" class="archive-article-date">
-  	<time datetime="2016-04-16T08:10:04.000Z" itemprop="datePublished">Apr 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/16/run-aspnet-5-on-centos/">在CentOS上运行Asp.Net 5</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'corminlu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 </div>
       <footer id="footer">
@@ -289,8 +278,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
