@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-06-11T05:27:52.334Z</updated>
+  <updated>2016-06-11T05:28:56.387Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -20,44 +20,12 @@
     <link href="http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/"/>
     <id>http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/</id>
     <published>2016-06-11T01:21:53.000Z</published>
-    <updated>2016-06-11T05:27:52.334Z</updated>
+    <updated>2016-06-11T05:28:56.387Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&lt;em&gt;本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。&lt;/p&gt;
-&lt;h1 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h1&gt;&lt;p&gt;DNVM/DNX/DNU都已经被废弃了，现在有了全新的工具&lt;a href=&quot;https://github.com/dotnet/cli&quot;&gt;DotNet CLI&lt;/a&gt;，以及统一的域名&lt;a href=&quot;http://dot.net&quot;&gt;dot.net&lt;/a&gt;，找到对应平台的运行时安装即可。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Windows （选择一个即可）&lt;ul&gt;
-&lt;li&gt;运行时+CLI工具：&lt;a href=&quot;.NET Core SDK Installer&quot;&gt;.NET Core SDK Installer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;SDK+VS集成：&lt;a href=&quot;https://go.microsoft.com/fwlink/?LinkId=798481&quot;&gt;.NET Core Tooling Preview 1 for Visual Studio 2015&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;CentOS 运行以下命令&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;需要先安装libunwind，全新安装以来组件见&lt;a href=&quot;https://github.com/dotnet/cli/blob/rel/1.0.0/Documentation/cli-prerequisites.md&quot;&gt;文档&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum install -y libunwind&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;接着安装sdk&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;SL https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0-preview1/scripts/obtain/dotnet-install.sh | bash /dev/stdin --version 1.0.0-preview1-002702 --install-dir ~/dotnet&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; ~/dotnet/dotnet /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OSX&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;可选，删除老版本cli&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo rm -rf /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/share/dotnet&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;需要先安装openssl&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;brew install openssl&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;brew link --force openssl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;接着下载安装&lt;a href=&quot;https://go.microsoft.com/fwlink/?LinkID=798400&quot;&gt;.Net Core SDK Installer&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果要尝试最新版，直接在&lt;a href=&quot;https://github.com/dotnet/cli&quot;&gt;DotNet CLI&lt;/a&gt;下载对应版本即可。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;DNVM未来说不准还会回归，用来管理运行时，现在这样下载安装确实很不方便&lt;/em&gt;&lt;/p&gt;
     
     </summary>
     

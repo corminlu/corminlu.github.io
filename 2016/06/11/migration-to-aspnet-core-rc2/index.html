@@ -7,21 +7,18 @@
   <title>迁移到Asp.Net Core RC2 | Cormin Lu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归
-.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。
-运行环境DNVM/DNX/DNU都已经被废弃了，现在有">
+.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="迁移到Asp.Net Core RC2">
 <meta property="og:url" content="http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
 <meta property="og:description" content="本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归
-.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。
-运行环境DNVM/DNX/DNU都已经被废弃了，现在有">
-<meta property="og:updated_time" content="2016-06-11T05:27:52.334Z">
+.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。">
+<meta property="og:updated_time" content="2016-06-11T05:28:56.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="迁移到Asp.Net Core RC2">
 <meta name="twitter:description" content="本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归
-.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。
-运行环境DNVM/DNX/DNU都已经被废弃了，现在有">
+.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。">
   
     <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
   
@@ -200,6 +197,7 @@
       
         <p><em>本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归</em></p>
 <p>.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。</p>
+<a id="more"></a>
 <h1 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h1><p>DNVM/DNX/DNU都已经被废弃了，现在有了全新的工具<a href="https://github.com/dotnet/cli" target="_blank" rel="external">DotNet CLI</a>，以及统一的域名<a href="http://dot.net" target="_blank" rel="external">dot.net</a>，找到对应平台的运行时安装即可。</p>
 <ul>
 <li>Windows （选择一个即可）<ul>
@@ -232,7 +230,6 @@
 </ul>
 <p>如果要尝试最新版，直接在<a href="https://github.com/dotnet/cli" target="_blank" rel="external">DotNet CLI</a>下载对应版本即可。</p>
 <p><em>DNVM未来说不准还会回归，用来管理运行时，现在这样下载安装确实很不方便</em></p>
-<a id="more"></a>
 <h1 id="项目及文件升级"><a href="#项目及文件升级" class="headerlink" title="项目及文件升级"></a>项目及文件升级</h1><h2 id="global-json"><a href="#global-json" class="headerlink" title="global.json"></a>global.json</h2><p><strong>RC1</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"projects"</span>: [<span class="string">"src"</span>, <span class="string">"test"</span>, <span class="string">"wrap"</span>],</span><br><span class="line">    <span class="string">"sdk"</span>: &#123;</span><br><span class="line">        <span class="string">"version"</span>: <span class="string">"1.0.0-rc1-update2"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>RC2</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"projects"</span>: [ <span class="string">"src"</span>, <span class="string">"test"</span>],</span><br><span class="line">  <span class="string">"sdk"</span>: &#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"1.0.0-preview1-002702"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="NuGet-Config"><a href="#NuGet-Config" class="headerlink" title="NuGet.Config"></a>NuGet.Config</h2><p>如果没有出现包还原失败，可以不需要NuGet.Config文件<br><strong>RC1</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packageSources</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--To inherit the global NuGet package sources remove the &lt;clear/&gt; line below --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">clear</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"NuGetorg"</span> <span class="attr">value</span>=<span class="string">"https://nuget.org/api/v2/"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"AspNetRC1"</span> <span class="attr">value</span>=<span class="string">"https://www.myget.org/F/aspnetrc1/api/v2/"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">packageSources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
