@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-04-17T10:19:08.105Z</updated>
+  <updated>2016-06-11T05:13:41.988Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>迁移到Asp.Net Core RC2</title>
+    <link href="http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/"/>
+    <id>http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/</id>
+    <published>2016-06-11T01:21:53.000Z</published>
+    <updated>2016-06-11T05:13:41.988Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX 
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
+    
+  </entry>
   
   <entry>
     <title>Visual Studio内置Node版本过低导致Bug</title>
