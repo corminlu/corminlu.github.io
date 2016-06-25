@@ -43,7 +43,7 @@
     <link href="http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/"/>
     <id>http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/</id>
     <published>2016-06-25T07:15:27.000Z</published>
-    <updated>2016-06-25T07:37:32.682Z</updated>
+    <updated>2016-06-25T09:48:16.801Z</updated>
     
     <summary type="html">
     
@@ -54,6 +54,8 @@
     
     
       <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="dotnet core" scheme="http://corminlu.github.io/tags/dotnet-core/"/>
     
       <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
     

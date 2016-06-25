@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/</loc>
+    
+    <lastmod>2016-06-25T09:48:16.801Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://corminlu.github.io/2016/06/25/running-dotnet-core-in-docker-container/</loc>
     
     <lastmod>2016-06-25T09:44:52.711Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/</loc>
     
     <lastmod>2016-06-25T07:49:13.250Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/</loc>
-    
-    <lastmod>2016-06-25T07:37:32.682Z</lastmod>
     
   </url>
   
