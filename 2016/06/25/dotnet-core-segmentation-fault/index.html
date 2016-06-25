@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>开启Hexo静态博客之旅 | Cormin Lu&#39;s Blog</title>
+  <title>.Net Core Segmentation Fault错误 | Cormin Lu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。">
+  <meta name="description" content="最近升级到.Net Core RC2，在Windows、Mac以及Linux Docker容器里运行正常，一发布到Linode上面的CentOS，运行没一会儿就会出现Segmentation Fault错误。
+项目里用到了Quartz.Net，而Quartz.Net也有适配.Net Core的分支quartznet-3，虽然可能有不少bug，但目前已经能正常使用。
+试着把Quartz.Net相关功">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开启Hexo静态博客之旅">
-<meta property="og:url" content="http://corminlu.github.io/2016/03/26/start-static-blog-with-hexo/index.html">
+<meta property="og:title" content=".Net Core Segmentation Fault错误">
+<meta property="og:url" content="http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
-<meta property="og:description" content="很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。">
-<meta property="og:updated_time" content="2016-03-26T12:36:07.614Z">
+<meta property="og:description" content="最近升级到.Net Core RC2，在Windows、Mac以及Linux Docker容器里运行正常，一发布到Linode上面的CentOS，运行没一会儿就会出现Segmentation Fault错误。
+项目里用到了Quartz.Net，而Quartz.Net也有适配.Net Core的分支quartznet-3，虽然可能有不少bug，但目前已经能正常使用。
+试着把Quartz.Net相关功">
+<meta property="og:updated_time" content="2016-06-25T07:37:32.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开启Hexo静态博客之旅">
-<meta name="twitter:description" content="很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。">
+<meta name="twitter:title" content=".Net Core Segmentation Fault错误">
+<meta name="twitter:description" content="最近升级到.Net Core RC2，在Windows、Mac以及Linux Docker容器里运行正常，一发布到Linode上面的CentOS，运行没一会儿就会出现Segmentation Fault错误。
+项目里用到了Quartz.Net，而Quartz.Net也有适配.Net Core的分支quartznet-3，虽然可能有不少bug，但目前已经能正常使用。
+试着把Quartz.Net相关功">
   
     <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
   
@@ -155,11 +161,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-start-static-blog-with-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-dotnet-core-segmentation-fault" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/26/start-static-blog-with-hexo/" class="article-date">
-  	<time datetime="2016-03-26T11:00:00.000Z" itemprop="datePublished">2016-03-26</time>
+      <a href="/2016/06/25/dotnet-core-segmentation-fault/" class="article-date">
+  	<time datetime="2016-06-25T07:15:27.000Z" itemprop="datePublished">2016-06-25</time>
 </a>
     </div>
   
@@ -172,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      开启Hexo静态博客之旅
+      .Net Core Segmentation Fault错误
     </h1>
   
 
@@ -181,7 +187,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linode/">linode</a></li></ul>
 	</div>
 
         
@@ -192,18 +198,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>很久没有写博客了，非工作时间又很少（或者是没时间）打开电脑，还经常性懒癌发作，并发症拖延症常伴，写博客也就变得奢侈了。<br><a id="more"></a></p>
-<p>最开始<strong>第一个博客</strong>用WordPress搭建，放在国外空间，某一天突然空间被wall也没有去管，直到域名空间过期最后内容全失。</p>
-<blockquote>
-<p>缺点：即要维护臃肿的博客系统，又要考虑域名及空间，随时打补丁升级</p>
-</blockquote>
-<p>接着<strong>第二个博客</strong>图省事直接使用博客平台，而且用了很长一段时间，直到后来上面各种文章泛滥，也很久没有去登录了。</p>
-<blockquote>
-<p>缺点：灵活性、可定制性差</p>
-</blockquote>
-<p>上面两个博客共同缺点是：需要是在电脑上排版，要耗费较多时间，而且也不方便。</p>
-<p>后面干脆直接在手机上装evernote随便记录一下，直到发现Markdown以及静态博客系统，使用简单且不用担心排版以及维护的问题。对比了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>/<a href="https://ghost.org/" target="_blank" rel="external">Ghost</a>/<a href="http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a>/<a href="http://octopress.org/" target="_blank" rel="external">Octoress</a>，最终选择了Hexo，部署在<a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>上面简单又省事。</p>
-<p>Hexo装了有一段时间了，直到现在总算逮到一点时间，就先开个头吧，但愿能好好坚持下去。</p>
+        <p>最近升级到.Net Core RC2，在Windows、Mac以及Linux Docker容器里运行正常，一发布到Linode上面的CentOS，运行没一会儿就会出现Segmentation Fault错误。</p>
+<p>项目里用到了Quartz.Net，而Quartz.Net也有适配.Net Core的分支<a href="https://github.com/quartznet/quartznet/tree/quartznet-3" target="_blank" rel="external">quartznet-3</a>，虽然可能有不少bug，但目前已经能正常使用。</p>
+<p>试着把Quartz.Net相关功能去掉，在Linode上的CentOS运行，过了一会儿还是因为Segmentation Fault终止了。</p>
+<p>直到有一天登录Linode管理控制台，无意中发现当前Configuration Profile的”VM Mode”是Paravirtualization（即半虚拟化），而我在很早之前就把vps从Xen升级到了KVM，但一直没注意到VM Mode设置，通过一番搜索后决定直接把VM Mode改成Full-Virtualization（全虚拟化）。</p>
+<p>抱着试一试的态度重新运行了一下.Net Core程序，居然没有出现Segmentation Fault，过了几个小时然后又过了几天，一直在正常运行。</p>
+<p>虽然不知道是什么原因（很可能就是虚拟化的问题），总算可以在Linode上运行.Net Core应用了。</p>
 
       
     </div>
@@ -213,15 +213,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误
-        
-      </div>
-    </a>
   
+    <a href="/2016/06/11/migration-to-aspnet-core-rc2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">迁移到Asp.Net Core RC2</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 

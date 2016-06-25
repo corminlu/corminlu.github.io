@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/</loc>
+    
+    <lastmod>2016-06-25T07:37:32.682Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/</loc>
     
     <lastmod>2016-06-11T05:28:56.387Z</lastmod>

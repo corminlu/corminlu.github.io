@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-06-11T05:28:56.387Z</updated>
+  <updated>2016-06-25T07:37:32.682Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>.Net Core Segmentation Fault错误</title>
+    <link href="http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/"/>
+    <id>http://corminlu.github.io/2016/06/25/dotnet-core-segmentation-fault/</id>
+    <published>2016-06-25T07:15:27.000Z</published>
+    <updated>2016-06-25T07:37:32.682Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近升级到.Net Core RC2，在Windows、Mac以及Linux Docker容器里运行正常，一发布到Linode上面的CentOS，运行没一会儿就会出现Segmentation Fault错误。&lt;/p&gt;
+&lt;p&gt;项目里用到了Quartz.Net，而Quartz.
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
+    
+      <category term="centos" scheme="http://corminlu.github.io/tags/centos/"/>
+    
+      <category term="linode" scheme="http://corminlu.github.io/tags/linode/"/>
+    
+  </entry>
   
   <entry>
     <title>迁移到Asp.Net Core RC2</title>

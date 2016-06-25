@@ -98,7 +98,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 13.33px;">aspnet</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 16.67px;">dev</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
+						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 16.67px;">aspnet</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/centos/" style="font-size: 13.33px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
 					</div>
 				</section>
 				
@@ -155,6 +155,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-dotnet-core-segmentation-fault" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/25/dotnet-core-segmentation-fault/" class="article-date">
+  	<time datetime="2016-06-25T07:15:27.000Z" itemprop="datePublished">2016-06-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/25/dotnet-core-segmentation-fault/">.Net Core Segmentation Fault错误</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近升级到.Net Core RC2，在Windows、Mac以及Linux Docker容器里运行正常，一发布到Linode上面的CentOS，运行没一会儿就会出现Segmentation Fault错误。</p>
+<p>项目里用到了Quartz.Net，而Quartz.Net也有适配.Net Core的分支<a href="https://github.com/quartznet/quartznet/tree/quartznet-3" target="_blank" rel="external">quartznet-3</a>，虽然可能有不少bug，但目前已经能正常使用。</p>
+<p>试着把Quartz.Net相关功能去掉，在Linode上的CentOS运行，过了一会儿还是因为Segmentation Fault终止了。</p>
+<p>直到有一天登录Linode管理控制台，无意中发现当前Configuration Profile的”VM Mode”是Paravirtualization（即半虚拟化），而我在很早之前就把vps从Xen升级到了KVM，但一直没注意到VM Mode设置，通过一番搜索后决定直接把VM Mode改成Full-Virtualization（全虚拟化）。</p>
+<p>抱着试一试的态度重新运行了一下.Net Core程序，居然没有出现Segmentation Fault，过了几个小时然后又过了几天，一直在正常运行。</p>
+<p>虽然不知道是什么原因（很可能就是虚拟化的问题），总算可以在Linode上运行.Net Core应用了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linode/">linode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-migration-to-aspnet-core-rc2" class="article article-type-post" itemscope itemprop="blogPost">
   
