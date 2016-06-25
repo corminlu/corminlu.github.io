@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-06-25T07:37:32.682Z</updated>
+  <updated>2016-06-25T09:44:52.711Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Docker容器中运行.Net Core应用</title>
+    <link href="http://corminlu.github.io/2016/06/25/running-dotnet-core-in-docker-container/"/>
+    <id>http://corminlu.github.io/2016/06/25/running-dotnet-core-in-docker-container/</id>
+    <published>2016-06-25T07:43:41.000Z</published>
+    <updated>2016-06-25T09:44:52.711Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker运行环境&quot;&gt;&lt;a href=&quot;#Docker运行环境&quot; class=&quot;headerlink&quot; title=&quot;Docker运行环境&quot;&gt;&lt;/a&gt;Docker运行环境&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt;最近发布了针对各平台Win/Mac/Linux的&lt;a href=&quot;https://www.docker.com/products/docker&quot;&gt;全新版本&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.docker.com/products/docker#/windows&quot;&gt;Docker for Windows&lt;/a&gt;基于Hyper-V运行，&lt;a href=&quot;https://www.docker.com/products/docker#/mac&quot;&gt;Docker for Mac&lt;/a&gt;基于&lt;a href=&quot;https://github.com/docker/HyperKit/&quot;&gt;HyperKit&lt;/a&gt;（早期版本的Docker for Mac Beta是基于&lt;a href=&quot;https://github.com/mist64/xhyve&quot;&gt;xhyve&lt;/a&gt;，不过HyperKit还是基于xhyve开发的）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dotnet core" scheme="http://corminlu.github.io/tags/dotnet-core/"/>
+    
+      <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
+    
+      <category term="docker" scheme="http://corminlu.github.io/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>.Net Core Segmentation Fault错误</title>
@@ -45,7 +68,7 @@
     <link href="http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/"/>
     <id>http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/</id>
     <published>2016-06-11T01:21:53.000Z</published>
-    <updated>2016-06-11T05:28:56.387Z</updated>
+    <updated>2016-06-25T07:49:16.829Z</updated>
     
     <summary type="html">
     
@@ -56,6 +79,8 @@
     
     
       <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="dotnet core" scheme="http://corminlu.github.io/tags/dotnet-core/"/>
     
       <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
     
@@ -110,7 +135,7 @@
     <link href="http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/"/>
     <id>http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/</id>
     <published>2016-04-16T08:10:04.000Z</published>
-    <updated>2016-04-17T04:46:35.658Z</updated>
+    <updated>2016-06-25T07:49:13.250Z</updated>
     
     <summary type="html">
     
@@ -122,6 +147,8 @@
     
     
       <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="dotnet core" scheme="http://corminlu.github.io/tags/dotnet-core/"/>
     
       <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
     
