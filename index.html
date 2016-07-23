@@ -98,7 +98,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 17.5px;">aspnet</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/centos/" style="font-size: 12.5px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 17.5px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
+						<a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 17.5px;">aspnet</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/centos/" style="font-size: 12.5px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 17.5px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 12.5px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
 					</div>
 				</section>
 				
@@ -155,6 +155,67 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-wkwebview-bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/23/wkwebview-bug/" class="article-date">
+  	<time datetime="2016-07-23T07:58:31.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/23/wkwebview-bug/">WKWebView的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。</p>
+<p>平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/23/wkwebview-bug/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-upgrade-to-dotnet-core-1-final" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -698,66 +759,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/26/writting-with-hexo/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo-install-and-config" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/26/hexo-install-and-config/" class="article-date">
-  	<time datetime="2016-03-26T13:23:00.000Z" itemprop="datePublished">2016-03-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/26/hexo-install-and-config/">Hexo安装及配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><p>首先需要安装<a href="https://nodejs.org">Nodejs</a>环境，然后使用npm安装Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/26/hexo-install-and-config/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

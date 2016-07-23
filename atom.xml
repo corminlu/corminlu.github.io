@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-07-23T07:56:18.783Z</updated>
+  <updated>2016-07-23T09:13:39.838Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WKWebView的坑</title>
+    <link href="http://corminlu.github.io/2016/07/23/wkwebview-bug/"/>
+    <id>http://corminlu.github.io/2016/07/23/wkwebview-bug/</id>
+    <published>2016-07-23T07:58:31.000Z</published>
+    <updated>2016-07-23T09:13:39.838Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。&lt;/p&gt;
+&lt;p&gt;平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="ios" scheme="http://corminlu.github.io/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>升级到.Net Core 1.0正式版</title>

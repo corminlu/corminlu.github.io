@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>WKWebView的坑 | Cormin Lu&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。
+平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WKWebView的坑">
+<meta property="og:url" content="http://corminlu.github.io/2016/07/23/wkwebview-bug/index.html">
+<meta property="og:site_name" content="Cormin Lu's Blog">
+<meta property="og:description" content="从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。
+平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。">
+<meta property="og:updated_time" content="2016-07-23T09:13:39.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WKWebView的坑">
+<meta name="twitter:description" content="从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。
+平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。">
+  
+    <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://avatars3.githubusercontent.com/u/1397003?v=3&s=140">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cormin Lu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">坐井观天</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 17.5px;">aspnet</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/centos/" style="font-size: 12.5px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 17.5px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 12.5px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cormin Lu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cormin Lu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">坐井观天</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-wkwebview-bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/23/wkwebview-bug/" class="article-date">
+  	<time datetime="2016-07-23T07:58:31.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WKWebView的坑
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。</p>
+<p>平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。</p>
+<a id="more"></a>
+<h1 id="POST内容为空"><a href="#POST内容为空" class="headerlink" title="POST内容为空"></a>POST内容为空</h1><p>使用WKWebView用POST方式提交数据，演示代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">NSString *post = [NSString stringWithFormat: @&quot;key1=%@&amp;key2=%@&quot;, key1, key2];</span><br><span class="line">NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];</span><br><span class="line">NSString *contentLength = [NSString stringWithFormat:@&quot;%d&quot;, postData.length];</span><br><span class="line"></span><br><span class="line">NSURL *url = [NSURL URLWithString:@&quot;http://www.example.com/api&quot;];</span><br><span class="line">NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];</span><br><span class="line">[request setHTTPMethod:@&quot;POST&quot;];</span><br><span class="line">[request setHTTPBody:postData];</span><br><span class="line">[request setValue:contentLength forHTTPHeaderField:@&quot;Content-Length&quot;];</span><br><span class="line">[request setValue:@&quot;application/x-www-form-urlencoded&quot; forHTTPHeaderField:@&quot;Content-Type&quot;];</span><br><span class="line">[request setValue:@&quot;application/json&quot; forHTTPHeaderField:@&quot;Accept&quot;];</span><br><span class="line"></span><br><span class="line">[webView loadRequest:request];</span><br></pre></td></tr></table></figure></p>
+<p>代码看起来很正常，UIWebView的时候都可以这么用，然而用了WKWebView之后，服务端收到的内容为空，通过Charles监听发现Content-Length为0，而且body也是空的。</p>
+<p>这是因为WKWebView的bug，暂时是没办法解决了，只能用变通的办法。</p>
+<h2 id="通过请求得到HTML内容，然后通过-webView-loadHTMLString-加载"><a href="#通过请求得到HTML内容，然后通过-webView-loadHTMLString-加载" class="headerlink" title="通过请求得到HTML内容，然后通过[webView loadHTMLString]加载"></a>通过请求得到HTML内容，然后通过[webView loadHTMLString]加载</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</span><br><span class="line">manager.responseSerializer = [AFHTTPResponseSerializer serializer];</span><br><span class="line"><span class="built_in">NSDictionary</span> *parameters = @&#123;</span><br><span class="line">    <span class="string">@"key1"</span>: key1,</span><br><span class="line">    <span class="string">@"key2"</span>: key2</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.example.com"</span>];</span><br><span class="line"></span><br><span class="line">[manager POST:<span class="string">@"http://www.example.com/api"</span> parameters:parameters success:^(<span class="built_in">NSURLSessionDataTask</span> *task, <span class="keyword">id</span> responseObject) &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string = [[<span class="built_in">NSString</span> alloc] initWithData:responseObject encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">    [webView loadHTMLString:htmlString baseURL:url];  </span><br><span class="line">&#125; failure:^(AFHTTPRequestOperation *operation, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Error: %@"</span>, error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p><strong>需要注意的是，loadHTMLString一定要设置baseURL，否则内容的样式不会被正确加载，如果有来源检测也可能不会通过</strong></p>
+<h2 id="通过js模拟提交"><a href="#通过js模拟提交" class="headerlink" title="通过js模拟提交"></a>通过js模拟提交</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.example.com/api"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"key1"</span> <span class="attr">value</span>=<span class="string">"key1"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"key2"</span> <span class="attr">value</span>=<span class="string">"key2"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">document</span>.forms[<span class="number">0</span>].submit();</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>把内容拼接成以上html内容，然后通过[webView loadHTMLString]加载，自动就提交跳转了</p>
+<h1 id="Cookie共享问题"><a href="#Cookie共享问题" class="headerlink" title="Cookie共享问题"></a>Cookie共享问题</h1><p>WKWebView使用了私有的Cookie存储容器，无法使用NSHTTPCookieStorage存储的cookie，比如通过AFNetworking请求登录，得到的cookie无法在WKWebView中使用。</p>
+<h2 id="通过js重新为WKWebView设置cookie"><a href="#通过js重新为WKWebView设置cookie" class="headerlink" title="通过js重新为WKWebView设置cookie"></a>通过js重新为WKWebView设置cookie</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">WKUserContentController* userContentController = WKUserContentController.new;</span><br><span class="line">WKUserScript * cookieScript = [[WKUserScript alloc] </span><br><span class="line">    initWithSource: <span class="string">@"document.cookie = 'TeskCookieKey1=TeskCookieValue1';document.cookie = 'TeskCookieKey2=TeskCookieValue2';"</span></span><br><span class="line">    injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:<span class="literal">NO</span>];</span><br><span class="line"><span class="comment">// again, use stringWithFormat: in the above line to inject your values programmatically</span></span><br><span class="line">[userContentController addUserScript:cookieScript];</span><br><span class="line">WKWebViewConfiguration* webViewConfig = WKWebViewConfiguration.new;</span><br><span class="line">webViewConfig.userContentController = userContentController;</span><br><span class="line">WKWebView * webView = [[WKWebView alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="comment">/*set your values*/</span>) configuration:webViewConfig];</span><br></pre></td></tr></table></figure>
+<p>但可能会遇到问题，比如服务端使用的是HttpOnly的cookie，js设置的cookie服务端不认识。</p>
+<h2 id="在请求时带上cookie"><a href="#在请求时带上cookie" class="headerlink" title="在请求时带上cookie"></a>在请求时带上cookie</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">WKWebView * webView = <span class="comment">/*set up your webView*/</span></span><br><span class="line"><span class="built_in">NSMutableURLRequest</span> * request = [<span class="built_in">NSMutableURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://example.com/index.html"</span>]];</span><br><span class="line">[request addValue:<span class="string">@"TeskCookieKey1=TeskCookieValue1;TeskCookieKey2=TeskCookieValue2;"</span> forHTTPHeaderField:<span class="string">@"Cookie"</span>];</span><br><span class="line"><span class="comment">// use stringWithFormat: in the above line to inject your values programmatically</span></span><br><span class="line">[webView loadRequest:request];</span><br></pre></td></tr></table></figure>
+<p>这个问题更大，只能使用GET请求，基本上等于废品</p>
+<h2 id="使用单例的WKProcessPool共享Cookie"><a href="#使用单例的WKProcessPool共享Cookie" class="headerlink" title="使用单例的WKProcessPool共享Cookie"></a>使用单例的WKProcessPool共享Cookie</h2><p>创建单例的WKProcessPool：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">id</span>)sharedPool &#123;</span><br><span class="line">    <span class="keyword">static</span> WKProcessPool *_sharedPool = <span class="literal">nil</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">        _sharedPool = [[WKProcessPool alloc] init];</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> _sharedPool;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>每次初始化WKWebView时都使用这个Pool：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];</span><br><span class="line">config.processPool = [<span class="keyword">self</span> sharedPool];</span><br><span class="line">webView = [[WKWebView alloc] initWithFrame:frame configuration:config];</span><br></pre></td></tr></table></figure>
+<p>然后在任何需要的时候，用WKWebView访问web页面进行登录。</p>
+<p><strong>可能可行的办法</strong><br>App使用原生的登录，在需要使用WKWebView时，先通过web页面进行登录，然后再跳转到要访问的地址<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.example.com/api/login?redirectUrl=要访问的地址"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"user"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"pass"</span> <span class="attr">value</span>=<span class="string">"pass"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">document</span>.forms[<span class="number">0</span>].submit();</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>通过拼接以上HTML，并使用[webView loadHTMLString]加载。</p>
+<h2 id="web页面主动请求授权"><a href="#web页面主动请求授权" class="headerlink" title="web页面主动请求授权"></a>web页面主动请求授权</h2><p>服务端使用了access_token授权，而且没有cookie授权机制的情况下，WKWebView里的web页面想要获取用户身份，可通过js与native交互的形式来进行授权访问</p>
+<ol>
+<li><p>web页请求授权：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bridgeURL</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">    ifr.style.display = <span class="string">'none'</span>;</span><br><span class="line">    ifr.src = <span class="string">"myapp://"</span> + url;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.appendChild(ifr);</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">document</span>.documentElement.removeChild(ifr) &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line">bridgeURL(<span class="string">"authorize?callback=loadUserInfo"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>app提供授权</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *script = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"loadUserInfo(&#123;accessToken:'%@'&#125;)"</span>, accessToken];</span><br><span class="line">[webView evaluateJavaScript:script completionHandler:^(<span class="keyword">id</span> result, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">    <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"evaluateJavaScript result: %@"</span>, result);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"evaluateJavaScript error: %@"</span>, error.localizedDescription);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>web页面得到授权后请求服务端资源</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadUserInfo</span>(<span class="params">headers</span>) </span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type: <span class="string">'GET'</span>,</span><br><span class="line">        dataType: <span class="string">'json'</span>,</span><br><span class="line">        url: <span class="string">'/api/userinfo'</span>,</span><br><span class="line">        headers: headers,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#result"</span>).html(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/ShingoFukuyama/WKWebViewTips" target="_blank" rel="external">WKWebView Tips</a><br><a href="http://stackoverflow.com/questions/25797972/cookie-sharing-between-multiple-wkwebviews" target="_blank" rel="external">Cookie sharing between multiple WKWebViews</a><br><a href="http://stackoverflow.com/questions/26253133/cant-set-headers-on-my-wkwebview-post-request" target="_blank" rel="external">Can’t set headers on my WKWebView POST request</a><br><a href="http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview/26577303#26577303" target="_blank" rel="external">Can I set the cookies to be used by a WKWebView?</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">升级到.Net Core 1.0正式版</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'corminlu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+        <div class="copy-right clearfix">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></div>
+        <div class="footer-left">
+    		&copy; 2016 <a href="http://corminlu.github.io">Cormin Lu</a>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
