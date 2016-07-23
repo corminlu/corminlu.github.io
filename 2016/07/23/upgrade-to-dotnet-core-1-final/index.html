@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>升级到.Net Core 1.0正式版 | Cormin Lu&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=".Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。
+卸载旧版本Windows卸载RC11AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall
+卸载RC21DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall
+如果没卸载干净，请到控制面板手动卸载干净
+CentOS直接删">
+<meta property="og:type" content="article">
+<meta property="og:title" content="升级到.Net Core 1.0正式版">
+<meta property="og:url" content="http://corminlu.github.io/2016/07/23/upgrade-to-dotnet-core-1-final/index.html">
+<meta property="og:site_name" content="Cormin Lu's Blog">
+<meta property="og:description" content=".Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。
+卸载旧版本Windows卸载RC11AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall
+卸载RC21DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall
+如果没卸载干净，请到控制面板手动卸载干净
+CentOS直接删">
+<meta property="og:updated_time" content="2016-07-23T07:56:18.783Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="升级到.Net Core 1.0正式版">
+<meta name="twitter:description" content=".Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。
+卸载旧版本Windows卸载RC11AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall
+卸载RC21DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall
+如果没卸载干净，请到控制面板手动卸载干净
+CentOS直接删">
+  
+    <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://avatars3.githubusercontent.com/u/1397003?v=3&s=140">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cormin Lu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">坐井观天</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 17.5px;">aspnet</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/centos/" style="font-size: 12.5px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 17.5px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cormin Lu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cormin Lu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">坐井观天</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-upgrade-to-dotnet-core-1-final" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/" class="article-date">
+  	<time datetime="2016-07-23T07:25:03.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      升级到.Net Core 1.0正式版
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnet-core/">dotnet core</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>.Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。</p>
+<h1 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p><strong>卸载RC1</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall</span><br></pre></td></tr></table></figure></p>
+<p><strong>卸载RC2</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall</span><br></pre></td></tr></table></figure></p>
+<p>如果没卸载干净，请到控制面板手动卸载干净</p>
+<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><p>直接删除.Net Core目录即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="_">-f</span> ~/dotnet</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="安装新版本"><a href="#安装新版本" class="headerlink" title="安装新版本"></a>安装新版本</h1><p>直接到<a href="http://dot.net/" target="_blank" rel="external">.Net Core</a>官网下载相应安装包安装即可。</p>
+<h2 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h2><p>使用Visual Studio的话需要更新到Update3，然后下载安装.NET Core SDK Installer(Preview 2)。</p>
+<p>如果网络比较慢的话，很可能在线安装不会成功，建议先离线下载完毕再安装</p>
+<p>1.离线下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DotNetCore.1.0.0-VS2015Tools.Preview2.exe /layout</span><br></pre></td></tr></table></figure></p>
+<p>layout方法可能也会下载不下来，可以在失败的时候看看需要哪些文件，然后用下载工具把它们下载到layout下载的目录，可能需要以下文件：</p>
+<ul>
+<li>DotNetCore.1.0.0-SDK.Preview2-x64.exe</li>
+<li>DotNetCore.1.0.0-SDK.Preview2-x86.exe</li>
+<li>aspnetcoremodule_x64_en_rc2_39.msi</li>
+<li>aspnetcoremodule_x86_en_rc2_39.msi</li>
+<li>ancm_iis_express_x64_en_rc2_39.msi</li>
+<li>ancm_iis_express_x86_en_rc2_39.msi</li>
+</ul>
+<p>2.安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DotNetCore.1.0.0-VS2015Tools.Preview2.exe /install /passive /quite</span><br></pre></td></tr></table></figure></p>
+<h2 id="CentOS-1"><a href="#CentOS-1" class="headerlink" title="CentOS"></a>CentOS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install libunwind libicu</span><br><span class="line">curl <span class="_">-s</span>SL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=809131</span><br><span class="line">sudo mkdir -p /opt/dotnet &amp;&amp; sudo tar zxf dotnet.tar.gz -C /opt/dotnet</span><br><span class="line">sudo ln <span class="_">-s</span> /opt/dotnet/dotnet /usr/<span class="built_in">local</span>/bin</span><br></pre></td></tr></table></figure>
+<h1 id="升级项目文件"><a href="#升级项目文件" class="headerlink" title="升级项目文件"></a>升级项目文件</h1><p><strong>注意，请先把所有project.lock.json删除，否则可能会出现编译失败</strong></p>
+<h2 id="NuGet-Config"><a href="#NuGet-Config" class="headerlink" title="NuGet.Config"></a>NuGet.Config</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packageSources</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--To inherit the global NuGet package sources remove the &lt;clear/&gt; line below --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">clear</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"dotnet-core"</span> <span class="attr">value</span>=<span class="string">"https://dotnet.myget.org/F/dotnet-core/api/v3/index.json"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"cli-deps"</span> <span class="attr">value</span>=<span class="string">"https://dotnet.myget.org/F/cli-deps/api/v3/index.json"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"api.nuget.org"</span> <span class="attr">value</span>=<span class="string">"https://api.nuget.org/v3/index.json"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">packageSources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="global-json"><a href="#global-json" class="headerlink" title="global.json"></a>global.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"projects"</span>: [ <span class="string">"src"</span>, <span class="string">"test"</span> ],</span><br><span class="line">  <span class="attr">"sdk"</span>: &#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"1.0.0-preview2-003121"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="project-json"><a href="#project-json" class="headerlink" title="project.json"></a>project.json</h2><p>把所有”1.0.0-rc2-final”、”1.0.0-rc2-3002702”的引用改为”1.0.0”，以及其他的一些引用的库从rc2改为正式版</p>
+<p><strong>dotnet-test-xunit</strong><br>版本号从”1.0.0-rc2-build10025” 变成 “2.2.0-*”</p>
+<p><strong>类库RC2</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"dependencies": &#123;</span><br><span class="line">  "NETStandard.Library": "1.5.0-rc2-24027"</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">"frameworks": &#123;</span><br><span class="line">  "netstandard1.5": &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>类库final</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"dependencies": &#123;</span><br><span class="line">  "NETStandard.Library": "1.6.0"</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">"frameworks": &#123;</span><br><span class="line">  "netstandard1.6": &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>RC2</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"runtimeOptions": &#123;</span><br><span class="line">  "gcServer": true,</span><br><span class="line">  "gcConcurrent": true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>final</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"runtimeOptions": &#123;</span><br><span class="line">  "configProperties": &#123;</span><br><span class="line">    "System.GC.Server": true,</span><br><span class="line">    "System.GC.Concurrent": true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>基本上改动不大，然后静静的等待nuget还原以及编译完成即可</p>
+<h1 id="中文编码"><a href="#中文编码" class="headerlink" title="中文编码"></a>中文编码</h1><p>如果使用了Encoding类，会发现gbk没办法获取了，从博客园上找到解决方案：</p>
+<p>引用”System.Text.Encoding.CodePages”: “4.0.1”，然后在程序里注册：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);</span><br></pre></td></tr></table></figure></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.linkedin.com/pulse/aspnet-5-rc-1-update-offline-installer-ali-bahraminezhad" target="_blank" rel="external">ASP.NET 5 RC 1 Update 1 Offline Installer</a><br><a href="http://www.cnblogs.com/artech/p/encoding-registeration-4-net-core.html" target="_blank" rel="external">难道.NET Core到R2连中文编码都不支持吗？</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/23/uiimageview-contentmode/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使UIImageView正确显示图片</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'corminlu'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+        <div class="copy-right clearfix">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></div>
+        <div class="footer-left">
+    		&copy; 2016 <a href="http://corminlu.github.io">Cormin Lu</a>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

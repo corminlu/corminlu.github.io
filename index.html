@@ -98,7 +98,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 16.67px;">aspnet</a> <a href="/tags/blog/" style="font-size: 16.67px;">blog</a> <a href="/tags/centos/" style="font-size: 13.33px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 16.67px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
+						<a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 17.5px;">aspnet</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/centos/" style="font-size: 12.5px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 17.5px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
 					</div>
 				</section>
 				
@@ -155,6 +155,70 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-upgrade-to-dotnet-core-1-final" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/" class="article-date">
+  	<time datetime="2016-07-23T07:25:03.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/23/upgrade-to-dotnet-core-1-final/">升级到.Net Core 1.0正式版</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>.Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。</p>
+<h1 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p><strong>卸载RC1</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall</span><br></pre></td></tr></table></figure></p>
+<p><strong>卸载RC2</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall</span><br></pre></td></tr></table></figure></p>
+<p>如果没卸载干净，请到控制面板手动卸载干净</p>
+<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><p>直接删除.Net Core目录即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="_">-f</span> ~/dotnet</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnet-core/">dotnet core</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/23/upgrade-to-dotnet-core-1-final/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-uiimageview-contentmode" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -694,66 +758,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/26/hexo-install-and-config/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo-deploy-error-dev-tty-on-windows" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/" class="article-date">
-  	<time datetime="2016-03-26T12:25:00.000Z" itemprop="datePublished">2016-03-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/">Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

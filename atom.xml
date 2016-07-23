@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-07-23T07:21:22.536Z</updated>
+  <updated>2016-07-23T07:56:18.783Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>升级到.Net Core 1.0正式版</title>
+    <link href="http://corminlu.github.io/2016/07/23/upgrade-to-dotnet-core-1-final/"/>
+    <id>http://corminlu.github.io/2016/07/23/upgrade-to-dotnet-core-1-final/</id>
+    <published>2016-07-23T07:25:03.000Z</published>
+    <updated>2016-07-23T07:56:18.783Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;.Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。&lt;/p&gt;
+&lt;h1 id=&quot;卸载旧版本&quot;&gt;&lt;a href=&quot;#卸载旧版本&quot; class=&quot;headerlink&quot; title=&quot;卸载旧版本&quot;&gt;&lt;/a&gt;卸载旧版本&lt;/h1&gt;&lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;卸载RC1&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;卸载RC2&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果没卸载干净，请到控制面板手动卸载干净&lt;/p&gt;
+&lt;h2 id=&quot;CentOS&quot;&gt;&lt;a href=&quot;#CentOS&quot; class=&quot;headerlink&quot; title=&quot;CentOS&quot;&gt;&lt;/a&gt;CentOS&lt;/h2&gt;&lt;p&gt;直接删除.Net Core目录即可&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rm &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; ~/dotnet&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="dotnet core" scheme="http://corminlu.github.io/tags/dotnet-core/"/>
+    
+      <category term="aspnet" scheme="http://corminlu.github.io/tags/aspnet/"/>
+    
+  </entry>
   
   <entry>
     <title>使UIImageView正确显示图片</title>
