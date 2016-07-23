@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-07-23T09:21:51.624Z</updated>
+  <updated>2016-07-23T09:59:48.888Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为服务器启用HTTPS以及iOS的ATS支持</title>
+    <link href="http://corminlu.github.io/2016/07/23/https-and-ios-ats/"/>
+    <id>http://corminlu.github.io/2016/07/23/https-and-ios-ats/</id>
+    <published>2016-07-23T09:31:24.000Z</published>
+    <updated>2016-07-23T09:59:48.888Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。&lt;/p&gt;
+&lt;p&gt;根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="ios" scheme="http://corminlu.github.io/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>WKWebView的坑</title>

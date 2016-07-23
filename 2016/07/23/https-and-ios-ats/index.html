@@ -4,27 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>使UIImageView正确显示图片 | Cormin Lu&#39;s Blog</title>
+  <title>为服务器启用HTTPS以及iOS的ATS支持 | Cormin Lu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。
-UIViewContentModeUIViewContentMode主要可用以下几个属性来改变图片：
-
-UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例">
+  <meta name="description" content="HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。
+根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使UIImageView正确显示图片">
-<meta property="og:url" content="http://corminlu.github.io/2016/07/23/uiimageview-contentmode/index.html">
+<meta property="og:title" content="为服务器启用HTTPS以及iOS的ATS支持">
+<meta property="og:url" content="http://corminlu.github.io/2016/07/23/https-and-ios-ats/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
-<meta property="og:description" content="经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。
-UIViewContentModeUIViewContentMode主要可用以下几个属性来改变图片：
-
-UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例">
-<meta property="og:updated_time" content="2016-07-23T07:21:22.536Z">
+<meta property="og:description" content="HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。
+根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。">
+<meta property="og:updated_time" content="2016-07-23T09:59:48.888Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使UIImageView正确显示图片">
-<meta name="twitter:description" content="经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。
-UIViewContentModeUIViewContentMode主要可用以下几个属性来改变图片：
-
-UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例">
+<meta name="twitter:title" content="为服务器启用HTTPS以及iOS的ATS支持">
+<meta name="twitter:description" content="HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。
+根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。">
   
     <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
   
@@ -164,11 +158,11 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-uiimageview-contentmode" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-https-and-ios-ats" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/23/uiimageview-contentmode/" class="article-date">
-  	<time datetime="2016-07-23T06:56:01.000Z" itemprop="datePublished">2016-07-23</time>
+      <a href="/2016/07/23/https-and-ios-ats/" class="article-date">
+  	<time datetime="2016-07-23T09:31:24.000Z" itemprop="datePublished">2016-07-23</time>
 </a>
     </div>
   
@@ -181,7 +175,7 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
         
   
     <h1 class="article-title" itemprop="name">
-      使UIImageView正确显示图片
+      为服务器启用HTTPS以及iOS的ATS支持
     </h1>
   
 
@@ -201,19 +195,17 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。</p>
-<h1 id="UIViewContentMode"><a href="#UIViewContentMode" class="headerlink" title="UIViewContentMode"></a>UIViewContentMode</h1><p><strong>UIViewContentMode</strong>主要可用以下几个属性来改变图片：</p>
-<ul>
-<li>UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例和UIImageView的frame不一致的时候，会调整图片比例，然后会出现图片拉伸变形</li>
-<li>UIViewContentModeScaleAspectFit 保持图片比例，按图片最大的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，可能会出现高度或宽度不够的无法完全填充UIImageView，然后出现白边</li>
-<li>UIViewContentModeScaleAspectFill 保持图片比例，按图片最小的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，虽能完全填充UIImageView，但图片有一部分不会被显示出来</li>
-</ul>
+        <p>HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。</p>
+<p>根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。</p>
 <a id="more"></a>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>一般情况下，图片比例和UIImageView比例能保证一致的时候，用UIViewContentModeScaleToFill就可以了。</p>
-<p>如果完全无法确定图片的比例，则最好使用UIViewContentModeScaleAspectFill来缩放图片。</p>
-<p>同时，还需要设置clipsToBounds为YES保证超出UIImageView的frame部分不被展示。</p>
-<p>一般使用属性初始化UIImageView如下：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIImageView</span> *)imageView &#123;</span><br><span class="line">    <span class="keyword">if</span> (!_imageView) &#123;</span><br><span class="line">        _imageView = [<span class="built_in">UIImageView</span> new];</span><br><span class="line">        _imageView.contentMode = <span class="built_in">UIViewContentModeScaleAspectFill</span>;</span><br><span class="line">        _imageView.clipsToBounds = <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _imageView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://jacksonkr.com/content/uiimageview-scaling-explained-visually" target="_blank" rel="external">UIImageView Scaling Explained Visually</a></p>
+<h1 id="检测并修复"><a href="#检测并修复" class="headerlink" title="检测并修复"></a>检测并修复</h1><p>可通过<a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="external">SSL LABS</a>进行在线检测。</p>
+<p>或者下载<a href="https://www.nartac.com/Products/IISCrypto" target="_blank" rel="external">IISCrypto</a>，直接点”Best Practices”设置你的Web服务器，这样默认就启用了TLS1.2并且能支持ATS，然后通过Site Scanner进行检测。</p>
+<h1 id="绑定证书"><a href="#绑定证书" class="headerlink" title="绑定证书"></a>绑定证书</h1><p>在IIS上导入证书，并为你的域名启用https协议，选择申请的证书。</p>
+<h1 id="为iOS绑定证书"><a href="#为iOS绑定证书" class="headerlink" title="为iOS绑定证书"></a>为iOS绑定证书</h1><p>运行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"openssl s_client -connect www.example.com:443 &lt;/dev/null 2&gt;/dev/null | openssl x509 -outform DER &gt; https.cer"</span></span><br></pre></td></tr></table></figure></p>
+<p>导出公开二进制证书https.cer，把它放到XCode工程中</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *certFilePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"https"</span> ofType:<span class="string">@"cer"</span>];</span><br><span class="line"><span class="built_in">NSData</span> *certData = [<span class="built_in">NSData</span> dataWithContentsOfFile:certFilePath];</span><br><span class="line"><span class="built_in">NSSet</span> *certSet = [<span class="built_in">NSSet</span> setWithObject:certData];</span><br><span class="line">AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:certSet];</span><br><span class="line">securityPolicy.allowInvalidCertificates = <span class="literal">NO</span>;</span><br><span class="line">securityPolicy.validatesDomainName = <span class="literal">YES</span>;</span><br><span class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</span><br><span class="line">manager.securityPolicy  = securityPolicy;</span><br></pre></td></tr></table></figure>
+<p>这样就可以安全使用ATS了，不过得注意证书过期导致APP不可用问题，所以要勤加更新</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://serverfault.com/questions/724077/how-to-configure-iis-7-5-ssl-tls-to-work-with-ios-9-ats" target="_blank" rel="external">How to configure IIS 7.5 SSL \ TLS to work with iOS 9 ATS</a><br><a href="https://www.hass.de/content/setup-your-iis-ssl-perfect-forward-secrecy-and-tls-12" target="_blank" rel="external">Setup your IIS for SSL Perfect Forward Secrecy and TLS 1.2</a><br><a href="https://github.com/ChenYilong/iOS9AdaptationTips" target="_blank" rel="external">iOS9AdaptationTips</a><br><a href="http://www.jianshu.com/p/4102b817ff2f" target="_blank" rel="external">正确使用 AFNetworking 的 SSL 保证网络安全</a><br><a href="http://infiniteqin.github.io/2016/03/09/AFNetworking%E8%AE%BE%E7%BD%AESSL%E9%93%BE%E6%8E%A5/" target="_blank" rel="external">AFNetworking设置SSL链接</a><br><a href="https://limh.me/2008_tls.html" target="_blank" rel="external">https://limh.me/2008_tls.html</a></p>
 
       
     </div>
@@ -223,18 +215,9 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
     
 <nav id="article-nav">
   
-    <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          升级到.Net Core 1.0正式版
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/25/running-dotnet-core-in-docker-container/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在Docker容器中运行.Net Core应用</div>
+    <a href="/2016/07/23/wkwebview-bug/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">WKWebView的坑</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
