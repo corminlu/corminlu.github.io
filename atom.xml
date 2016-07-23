@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-06-25T09:44:52.711Z</updated>
+  <updated>2016-07-23T07:21:22.536Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使UIImageView正确显示图片</title>
+    <link href="http://corminlu.github.io/2016/07/23/uiimageview-contentmode/"/>
+    <id>http://corminlu.github.io/2016/07/23/uiimageview-contentmode/</id>
+    <published>2016-07-23T06:56:01.000Z</published>
+    <updated>2016-07-23T07:21:22.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。&lt;/p&gt;
+&lt;h1 id=&quot;UIViewContentMode&quot;&gt;&lt;a href=&quot;#UIViewContentMode&quot; class=&quot;headerlink&quot; title=&quot;UIViewContentMode&quot;&gt;&lt;/a&gt;UIViewContentMode&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;UIViewContentMode&lt;/strong&gt;主要可用以下几个属性来改变图片：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例和UIImageView的frame不一致的时候，会调整图片比例，然后会出现图片拉伸变形&lt;/li&gt;
+&lt;li&gt;UIViewContentModeScaleAspectFit 保持图片比例，按图片最大的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，可能会出现高度或宽度不够的无法完全填充UIImageView，然后出现白边&lt;/li&gt;
+&lt;li&gt;UIViewContentModeScaleAspectFill 保持图片比例，按图片最小的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，虽能完全填充UIImageView，但图片有一部分不会被显示出来&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="ios" scheme="http://corminlu.github.io/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>在Docker容器中运行.Net Core应用</title>
