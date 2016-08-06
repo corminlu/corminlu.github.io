@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-08-06T10:06:50.341Z</updated>
+  <updated>2016-08-06T11:44:27.734Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AppStore上架准备</title>
+    <link href="http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/"/>
+    <id>http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/</id>
+    <published>2016-08-06T10:35:55.000Z</published>
+    <updated>2016-08-06T11:44:27.734Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下上架到AppStore的准备工作&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="ios" scheme="http://corminlu.github.io/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>我的Mac软件工具清单</title>
