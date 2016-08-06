@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-08-06T07:18:41.656Z</updated>
+  <updated>2016-08-06T09:23:57.056Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>我的Mac Shell列表</title>
+    <title>我的Mac开发工具清单</title>
+    <link href="http://corminlu.github.io/2016/08/06/my-mac-dev-tools/"/>
+    <id>http://corminlu.github.io/2016/08/06/my-mac-dev-tools/</id>
+    <published>2016-08-06T07:22:10.000Z</published>
+    <updated>2016-08-06T09:23:57.056Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下我在&lt;code&gt;Mac&lt;/code&gt;下使用的开发工具(部分未使用过)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dev" scheme="http://corminlu.github.io/tags/dev/"/>
+    
+      <category term="mac" scheme="http://corminlu.github.io/tags/mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的Mac Shell清单</title>
     <link href="http://corminlu.github.io/2016/08/06/my-mac-shells/"/>
     <id>http://corminlu.github.io/2016/08/06/my-mac-shells/</id>
     <published>2016-08-06T04:43:49.000Z</published>
-    <updated>2016-08-06T07:18:41.656Z</updated>
+    <updated>2016-08-06T09:24:17.870Z</updated>
     
     <summary type="html">
     
