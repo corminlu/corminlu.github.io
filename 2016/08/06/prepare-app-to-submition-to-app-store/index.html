@@ -15,16 +15,43 @@
 
 
 
-<meta name="description" content="记录一下上架到AppStore的准备工作">
+<meta name="description" content="记录一下上架到AppStore的准备工作
+Developer Center证书相关创建CSR
+后面会用到，过程略
+创建AppId
+设置好需要使用的功能，比如我需要Push Notification、Associated Domains等
+创建证书
+分别需要创建Developement和Distribution类型证书
+
+iOS App Development 日常开发使用的
+Apple Push">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AppStore上架准备">
 <meta property="og:url" content="http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
-<meta property="og:description" content="记录一下上架到AppStore的准备工作">
-<meta property="og:updated_time" content="2016-08-06T11:44:27.734Z">
+<meta property="og:description" content="记录一下上架到AppStore的准备工作
+Developer Center证书相关创建CSR
+后面会用到，过程略
+创建AppId
+设置好需要使用的功能，比如我需要Push Notification、Associated Domains等
+创建证书
+分别需要创建Developement和Distribution类型证书
+
+iOS App Development 日常开发使用的
+Apple Push">
+<meta property="og:updated_time" content="2016-08-07T08:28:13.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AppStore上架准备">
-<meta name="twitter:description" content="记录一下上架到AppStore的准备工作">
+<meta name="twitter:description" content="记录一下上架到AppStore的准备工作
+Developer Center证书相关创建CSR
+后面会用到，过程略
+创建AppId
+设置好需要使用的功能，比如我需要Push Notification、Associated Domains等
+创建证书
+分别需要创建Developement和Distribution类型证书
+
+iOS App Development 日常开发使用的
+Apple Push">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -257,8 +284,7 @@
       
           
         <p>记录一下上架到AppStore的准备工作</p>
-<a id="more"></a>
-<h1 id="Developer-Center证书相关"><a href="#Developer-Center证书相关" class="headerlink" title="Developer Center证书相关"></a>Developer Center证书相关</h1><p><strong>创建CSR</strong></p>
+<h2 id="Developer-Center证书相关"><a href="#Developer-Center证书相关" class="headerlink" title="Developer Center证书相关"></a>Developer Center证书相关</h2><p><strong>创建CSR</strong></p>
 <p>后面会用到，过程略</p>
 <p><strong>创建AppId</strong></p>
 <p>设置好需要使用的功能，比如我需要Push Notification、Associated Domains等</p>
@@ -279,7 +305,8 @@
 <li>App Store 正式上架使用</li>
 </ul>
 <p>创建时同样取好名字以便区分，然后下载双击导入即可</p>
-<h1 id="Build项目生成相关"><a href="#Build项目生成相关" class="headerlink" title="Build项目生成相关"></a>Build项目生成相关</h1><p>在XCode登录当前的Apple Id，并设置XCode的Team。</p>
+<a id="more"></a>
+<h2 id="Build项目生成相关"><a href="#Build项目生成相关" class="headerlink" title="Build项目生成相关"></a>Build项目生成相关</h2><p>在XCode登录当前的Apple Id，并设置XCode的Team。</p>
 <p><strong>Code Sign</strong></p>
 <p>找到<code>Build Setting</code>选项卡</p>
 <ul>
@@ -300,14 +327,14 @@
 <p>移除所有断点</p>
 <p><strong>remove unused resource</strong></p>
 <p>移除未使用的资源如图片等，减小包的大小</p>
-<h1 id="Universal-Link"><a href="#Universal-Link" class="headerlink" title="Universal Link"></a>Universal Link</h1><p>ios9开始支持applinks设置，在项目的Capabilities开启Associated Domains选项，然后在domains填入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">applinks:corminlu.github.io</div></pre></td></tr></table></figure></p>
+<h2 id="Universal-Link"><a href="#Universal-Link" class="headerlink" title="Universal Link"></a>Universal Link</h2><p>ios9开始支持applinks设置，在项目的Capabilities开启Associated Domains选项，然后在domains填入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">applinks:corminlu.github.io</div></pre></td></tr></table></figure></p>
 <p>如果有多个域名就填入多个，然后会自动生成<code>.entitlements</code>文件。</p>
 <p>另外还需要在AppDelegate处理UrlScheme<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *)userActivity restorationHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span> *))restorationHandler</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ([userActivity.activityType isEqualToString:<span class="built_in">NSUserActivityTypeBrowsingWeb</span>]) &#123;</div><div class="line">        <span class="built_in">NSURL</span> *webpageURL = userActivity.webpageURL;</div><div class="line">        <span class="built_in">NSString</span> *host = webpageURL.host;</div><div class="line">        <span class="keyword">if</span> ([host isEqualToString:<span class="string">@"corminlu.github.io"</span>]) &#123;</div><div class="line">            <span class="comment">//do stuff...</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在服务器的<code>.well-known</code>目录下放入<code>apple-app-site-association</code>文件，文件内容<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"applinks"</span>: &#123;</div><div class="line">      <span class="attr">"apps"</span>: [],</div><div class="line">      <span class="attr">"details"</span>: [</div><div class="line">          &#123;</div><div class="line">              <span class="attr">"appID"</span>: <span class="string">"#TeamID#.#AppID#"</span>,</div><div class="line">              <span class="attr">"paths"</span>: [ <span class="string">"*"</span> ]</div><div class="line">          &#125;</div><div class="line">      ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>appID替换成自己的如<code>ABCD1234.com.apple.wwdc</code>，并确保服务端输出的MIME为<code>application/json</code>。</p>
-<h1 id="Https"><a href="#Https" class="headerlink" title="Https"></a>Https</h1><p>启用Https保证安全，详见<a href="http://corminlu.github.io/2016/07/23/https-and-ios-ats/">之前的博客</a>。另外确保<code>NSAllowsArbitraryLoads</code>开关是关闭的。</p>
-<h1 id="webP-APNG"><a href="#webP-APNG" class="headerlink" title="webP/APNG"></a>webP/APNG</h1><p><a href="https://developers.google.com/speed/webp/docs/using" target="_blank" rel="external">WebP格式</a>/<a href="https://wiki.mozilla.org/APNG_Specification" target="_blank" rel="external">APNG格式</a>能有效的减小图片资源的大小，有条件的情况下能使用webP就尽量使用，<a href="https://github.com/ibireme/YYImage" target="_blank" rel="external">YYImage</a>对WebP/APNG都有很好的支持，可以大胆放心的使用这个库来呈现本地、远程图片。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<h2 id="Https"><a href="#Https" class="headerlink" title="Https"></a>Https</h2><p>启用Https保证安全，详见<a href="http://corminlu.github.io/2016/07/23/https-and-ios-ats/">之前的博客</a>。另外确保<code>NSAllowsArbitraryLoads</code>开关是关闭的。</p>
+<h2 id="webP-APNG"><a href="#webP-APNG" class="headerlink" title="webP/APNG"></a>webP/APNG</h2><p><a href="https://developers.google.com/speed/webp/docs/using" target="_blank" rel="external">WebP格式</a>/<a href="https://wiki.mozilla.org/APNG_Specification" target="_blank" rel="external">APNG格式</a>能有效的减小图片资源的大小，有条件的情况下能使用webP就尽量使用，<a href="https://github.com/ibireme/YYImage" target="_blank" rel="external">YYImage</a>对WebP/APNG都有很好的支持，可以大胆放心的使用这个库来呈现本地、远程图片。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2" target="_blank" rel="external">Support Universal Links</a></li>
 <li><a href="http://www.jianshu.com/p/c72f321c1304" target="_blank" rel="external">iOS Universal Links(通用链接)</a></li>
 </ul>
@@ -322,7 +349,7 @@
         <p><span>本文标题:</span><a href="/2016/08/06/prepare-app-to-submition-to-app-store/">AppStore上架准备</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Cormin Lu</a></p>
         <p><span>发布时间:</span>2016-08-06, 18:35:55</p>
-        <p><span>最后更新:</span>2016-08-06, 19:44:27</p>
+        <p><span>最后更新:</span>2016-08-07, 16:28:13</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/06/prepare-app-to-submition-to-app-store/" title="AppStore上架准备">http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/</a>
             <span class="copy-path" data-clipboard-text="原文: http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/　　作者: Cormin Lu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -352,7 +379,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Developer-Center证书相关"><span class="toc-number">1.</span> <span class="toc-text">Developer Center证书相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Build项目生成相关"><span class="toc-number">2.</span> <span class="toc-text">Build项目生成相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Universal-Link"><span class="toc-number">3.</span> <span class="toc-text">Universal Link</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Https"><span class="toc-number">4.</span> <span class="toc-text">Https</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webP-APNG"><span class="toc-number">5.</span> <span class="toc-text">webP/APNG</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Developer-Center证书相关"><span class="toc-number">1.</span> <span class="toc-text">Developer Center证书相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build项目生成相关"><span class="toc-number">2.</span> <span class="toc-text">Build项目生成相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Universal-Link"><span class="toc-number">3.</span> <span class="toc-text">Universal Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Https"><span class="toc-number">4.</span> <span class="toc-text">Https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webP-APNG"><span class="toc-number">5.</span> <span class="toc-text">webP/APNG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>

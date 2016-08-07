@@ -27,7 +27,7 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
 UIViewContentModeUIViewContentMode主要可用以下几个属性来改变图片：
 
 UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例">
-<meta property="og:updated_time" content="2016-07-23T07:21:22.536Z">
+<meta property="og:updated_time" content="2016-08-07T08:28:59.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使UIImageView正确显示图片">
 <meta name="twitter:description" content="经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。
@@ -266,18 +266,18 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
       
           
         <p>经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。</p>
-<h1 id="UIViewContentMode"><a href="#UIViewContentMode" class="headerlink" title="UIViewContentMode"></a>UIViewContentMode</h1><p><strong>UIViewContentMode</strong>主要可用以下几个属性来改变图片：</p>
+<h2 id="UIViewContentMode"><a href="#UIViewContentMode" class="headerlink" title="UIViewContentMode"></a>UIViewContentMode</h2><p><strong>UIViewContentMode</strong>主要可用以下几个属性来改变图片：</p>
 <ul>
 <li>UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例和UIImageView的frame不一致的时候，会调整图片比例，然后会出现图片拉伸变形</li>
 <li>UIViewContentModeScaleAspectFit 保持图片比例，按图片最大的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，可能会出现高度或宽度不够的无法完全填充UIImageView，然后出现白边</li>
 <li>UIViewContentModeScaleAspectFill 保持图片比例，按图片最小的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，虽能完全填充UIImageView，但图片有一部分不会被显示出来</li>
 </ul>
 <a id="more"></a>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>一般情况下，图片比例和UIImageView比例能保证一致的时候，用UIViewContentModeScaleToFill就可以了。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>一般情况下，图片比例和UIImageView比例能保证一致的时候，用UIViewContentModeScaleToFill就可以了。</p>
 <p>如果完全无法确定图片的比例，则最好使用UIViewContentModeScaleAspectFill来缩放图片。</p>
 <p>同时，还需要设置clipsToBounds为YES保证超出UIImageView的frame部分不被展示。</p>
 <p>一般使用属性初始化UIImageView如下：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIImageView</span> *)imageView &#123;</div><div class="line">    <span class="keyword">if</span> (!_imageView) &#123;</div><div class="line">        _imageView = [<span class="built_in">UIImageView</span> new];</div><div class="line">        _imageView.contentMode = <span class="built_in">UIViewContentModeScaleAspectFill</span>;</div><div class="line">        _imageView.clipsToBounds = <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> _imageView;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://jacksonkr.com/content/uiimageview-scaling-explained-visually" target="_blank" rel="external">UIImageView Scaling Explained Visually</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://jacksonkr.com/content/uiimageview-scaling-explained-visually" target="_blank" rel="external">UIImageView Scaling Explained Visually</a></p>
 
       
     </div>
@@ -289,7 +289,7 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
         <p><span>本文标题:</span><a href="/2016/07/23/uiimageview-contentmode/">使UIImageView正确显示图片</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Cormin Lu</a></p>
         <p><span>发布时间:</span>2016-07-23, 14:56:01</p>
-        <p><span>最后更新:</span>2016-07-23, 15:21:22</p>
+        <p><span>最后更新:</span>2016-08-07, 16:28:59</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/07/23/uiimageview-contentmode/" title="使UIImageView正确显示图片">http://corminlu.github.io/2016/07/23/uiimageview-contentmode/</a>
             <span class="copy-path" data-clipboard-text="原文: http://corminlu.github.io/2016/07/23/uiimageview-contentmode/　　作者: Cormin Lu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -325,7 +325,7 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UIViewContentMode"><span class="toc-number">1.</span> <span class="toc-text">UIViewContentMode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UIViewContentMode"><span class="toc-number">1.</span> <span class="toc-text">UIViewContentMode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>

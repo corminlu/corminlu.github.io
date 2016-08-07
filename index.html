@@ -252,6 +252,27 @@
       
           
               <p>记录一下上架到AppStore的准备工作</p>
+<h2 id="Developer-Center证书相关"><a href="#Developer-Center证书相关" class="headerlink" title="Developer Center证书相关"></a>Developer Center证书相关</h2><p><strong>创建CSR</strong></p>
+<p>后面会用到，过程略</p>
+<p><strong>创建AppId</strong></p>
+<p>设置好需要使用的功能，比如我需要Push Notification、Associated Domains等</p>
+<p><strong>创建证书</strong></p>
+<p>分别需要创建Developement和Distribution类型证书</p>
+<ul>
+<li>iOS App Development 日常开发使用的</li>
+<li>Apple Push Notification service SSL (Sandbox) 开发时使用的APNS推送证书</li>
+<li>App Store and Ad Hoc 上架和adhoc内测使用的正式证书</li>
+<li>Apple Push Notification service SSL (Sandbox &amp; Production) 正式使用以及adhoc内测使用的推送证书</li>
+</ul>
+<p>创建证书时为每个证书取好名字，如-appstore、-dev后缀以便区分，然后下载到本地导入到计算机即可。如果要给别人使用，需要导出成.p12格式。</p>
+<p><strong>创建Provisioning Profile</strong></p>
+<p>根据需要创建</p>
+<ul>
+<li>iOS App Development 日常开发使用</li>
+<li>Ad Hoc adhoc内测使用</li>
+<li>App Store 正式上架使用</li>
+</ul>
+<p>创建时同样取好名字以便区分，然后下载双击导入即可</p>
           
       
     </div>
@@ -316,6 +337,22 @@
       
           
               <p>记录一下我在<code>Mac</code>下使用的各种软件工具(部分未使用)</p>
+<h2 id="系统工具"><a href="#系统工具" class="headerlink" title="系统工具"></a>系统工具</h2><p><a href="http://www.cocoatech.com/pathfinder/">Path Finder</a> 超赞Mac资源文件管理工具，自带shell面板，可以设置成Solarized配色</p>
+<p><a href="https://bjango.com/mac/istatmenus/">iStat Menus</a> 是Mac上最优秀的系统监控工具，能够在系统菜单栏实时监控CPU、GPU、内存、硬盘、网络、温度、电池以及系统时间等</p>
+<p><a href="http://www.imagetasks.com">iStatistica</a> 一款高颜值的系统监控工具和iStat Menus类似</p>
+<p><a href="https://github.com/SamRothCA/Today-Scripts">Today-Scripts</a> 可以在通知中心显示CPU/内存/硬盘/电池等使用情况</p>
+<p><a href="https://www.piriform.com/ccleaner/download">CCleaner</a> 资深系统垃圾清扫软件</p>
+<p><a href="http://macpaw.com/cleanmymac">CleanMyMac</a> 强大的mac系统清理工具</p>
+<p><a href="https://www.alfredapp.com/">Alfred</a> 效率神器，秒杀SpotLight渣渣。有各种<a href="https://github.com/zenorocha/alfred-workflows">Workflow</a>，用起来非常方便</p>
+<p><a href="https://github.com/nate-parrott/Flashlight">Flashlight</a> SpotLight插件，据说和Alfred功能类似</p>
+<p><a href="https://macitbetter.com/">BetterZip</a> 快速的压缩工具</p>
+<p><a href="https://github.com/w0lfschild/cDock2">cDock</a> 是一款专门为OS X系统定制的小插件。可以帮助我们自定义dock栏的主题，改变其颜色，背景，透明。</p>
+<p><a href="https://www.boastr.net/">BetterTouchTool</a> 是一款专为Mac用户开发的 Magic Mouse 鼠标 和 TouchPad 的功能增强软件。</p>
+<p><a href="https://daisydiskapp.com/">DaisyDisk</a> 系统清理工具，他可以帮助你了解磁盘使用状况，并进行准确的分析，让你非常轻松就能揪出占用磁盘空间的那些文件</p>
+<p><a href="https://www.cindori.org/software/disksensei/">Disk Sensei</a> 是一款磁盘空间管理工具，以直观的区块、数字和颜色来显示硬盘上文件夹，文件大小，且功能强大的Mac磁盘清理软件。</p>
+<p><a href="www.eudic.net/">EuDic</a> 欧路词典是一款Mac上的非常优秀的词典工具，支持屏幕取词、划词搜索、生词本、翻译朗读、词库扩展等等功能</p>
+<p><a href="https://1password.com/">1Password</a> 密码管理工具</p>
+<p><a href="https://www.oneperiodic.com/products/handsoff/">Hands Off</a> 是一款在Mac上类似防火墙的工具，它可以帮助你控制程序是否访问网络或者磁盘。并对系统不可信的进程和信息进行监控。</p>
           
       
     </div>
@@ -380,6 +417,8 @@
       
           
               <p>记录一下我在<code>Mac</code>下使用的开发工具(部分未使用过)</p>
+<h2 id="XCode"><a href="#XCode" class="headerlink" title="XCode"></a><a href="https://developer.apple.com/xcode/">XCode</a></h2><p>这个无需解释</p>
+<h3 id="Alcatraz"><a href="#Alcatraz" class="headerlink" title="Alcatraz"></a><a href="https://github.com/alcatraz/Alcatraz">Alcatraz</a></h3><p>XCode的插件管理工具，支持XCode 7+<br><img src="http://alcatraz.io/images/screenshot@2x.png" alt="img"></p>
           
       
     </div>
@@ -444,6 +483,14 @@
       
           
               <p>记录一下我在<code>Mac</code>下使用的各种Shell工具</p>
+<h2 id="RubyGems"><a href="#RubyGems" class="headerlink" title="RubyGems"></a><a href="https://rubygems.org">RubyGems</a></h2><p>系统自带，有一部分工具管理靠它。</p>
+<p>为了能正常使用，最好把源换成<code>https://ruby.taobao.org/</code></p>
+<h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="http://brew.sh/">Homebrew</a></h2><p>大部分工具都靠brew和brew cask来管理，实在是太方便了。</p>
+<p><strong>安装方法</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
+<p>编辑<code>~/.bash_profile</code>增加以下行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># for brew install</span></div><div class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure></p>
+<p><strong>cask必不可少</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install cask</div></pre></td></tr></table></figure></p>
+<p>不过有些时候cask里的软件更新比较慢</p>
+<!--corminlu.github.io-->
           
       
     </div>
@@ -509,6 +556,8 @@
           
               <p>HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。</p>
 <p>根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。</p>
+<h2 id="检测并修复"><a href="#检测并修复" class="headerlink" title="检测并修复"></a>检测并修复</h2><p>可通过<a href="https://www.ssllabs.com/ssltest/">SSL LABS</a>进行在线检测。</p>
+<p>或者下载<a href="https://www.nartac.com/Products/IISCrypto">IISCrypto</a>，直接点”Best Practices”设置你的Web服务器，这样默认就启用了TLS1.2并且能支持ATS，然后通过Site Scanner进行检测。</p>
           
       
     </div>
@@ -574,6 +623,10 @@
           
               <p>从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。</p>
 <p>平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。</p>
+<h2 id="POST内容为空"><a href="#POST内容为空" class="headerlink" title="POST内容为空"></a>POST内容为空</h2><p>使用WKWebView用POST方式提交数据，演示代码如下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *post = [<span class="built_in">NSString</span> stringWithFormat: <span class="string">@"key1=%@&amp;key2=%@"</span>, key1, key2];</div><div class="line"><span class="built_in">NSData</span> *postData = [post dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line"><span class="built_in">NSString</span> *contentLength = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%d"</span>, postData.length];</div><div class="line"></div><div class="line"><span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.example.com/api"</span>];</div><div class="line"><span class="built_in">NSMutableURLRequest</span> *request = [<span class="built_in">NSMutableURLRequest</span> requestWithURL:url];</div><div class="line">[request setHTTPMethod:<span class="string">@"POST"</span>];</div><div class="line">[request setHTTPBody:postData];</div><div class="line">[request setValue:contentLength forHTTPHeaderField:<span class="string">@"Content-Length"</span>];</div><div class="line">[request setValue:<span class="string">@"application/x-www-form-urlencoded"</span> forHTTPHeaderField:<span class="string">@"Content-Type"</span>];</div><div class="line">[request setValue:<span class="string">@"application/json"</span> forHTTPHeaderField:<span class="string">@"Accept"</span>];</div><div class="line"></div><div class="line">[webView loadRequest:request];</div></pre></td></tr></table></figure>
+<p>代码看起来很正常，UIWebView的时候都可以这么用，然而用了WKWebView之后，服务端收到的内容为空，通过Charles监听发现Content-Length为0，而且body也是空的。</p>
+<p>这是因为WKWebView的bug，暂时是没办法解决了，只能用变通的办法。</p>
           
       
     </div>
@@ -638,10 +691,10 @@
       
           
               <p>.Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。</p>
-<h1 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p><strong>卸载RC1</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall</div></pre></td></tr></table></figure></p>
+<h2 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p><strong>卸载RC1</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall</div></pre></td></tr></table></figure></p>
 <p><strong>卸载RC2</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall</div></pre></td></tr></table></figure></p>
 <p>如果没卸载干净，请到控制面板手动卸载干净</p>
-<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><p>直接删除.Net Core目录即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm <span class="_">-f</span> ~/dotnet</div></pre></td></tr></table></figure></p>
+<h3 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h3><p>直接删除.Net Core目录即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm <span class="_">-f</span> ~/dotnet</div></pre></td></tr></table></figure></p>
           
       
     </div>
@@ -706,7 +759,7 @@
       
           
               <p>经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。</p>
-<h1 id="UIViewContentMode"><a href="#UIViewContentMode" class="headerlink" title="UIViewContentMode"></a>UIViewContentMode</h1><p><strong>UIViewContentMode</strong>主要可用以下几个属性来改变图片：</p>
+<h2 id="UIViewContentMode"><a href="#UIViewContentMode" class="headerlink" title="UIViewContentMode"></a>UIViewContentMode</h2><p><strong>UIViewContentMode</strong>主要可用以下几个属性来改变图片：</p>
 <ul>
 <li>UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例和UIImageView的frame不一致的时候，会调整图片比例，然后会出现图片拉伸变形</li>
 <li>UIViewContentModeScaleAspectFit 保持图片比例，按图片最大的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，可能会出现高度或宽度不够的无法完全填充UIImageView，然后出现白边</li>
@@ -775,7 +828,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="Docker运行环境"><a href="#Docker运行环境" class="headerlink" title="Docker运行环境"></a>Docker运行环境</h1><p><a href="https://www.docker.com">Docker</a>最近发布了针对各平台Win/Mac/Linux的<a href="https://www.docker.com/products/docker">全新版本</a>。</p>
+              <h2 id="Docker运行环境"><a href="#Docker运行环境" class="headerlink" title="Docker运行环境"></a>Docker运行环境</h2><p><a href="https://www.docker.com">Docker</a>最近发布了针对各平台Win/Mac/Linux的<a href="https://www.docker.com/products/docker">全新版本</a>。</p>
 <p><a href="https://www.docker.com/products/docker#/windows">Docker for Windows</a>基于Hyper-V运行，<a href="https://www.docker.com/products/docker#/mac">Docker for Mac</a>基于<a href="https://github.com/docker/HyperKit/">HyperKit</a>（早期版本的Docker for Mac Beta是基于<a href="https://github.com/mist64/xhyve">xhyve</a>，不过HyperKit还是基于xhyve开发的）。</p>
           
       

@@ -253,6 +253,38 @@
           
               <p><em>本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归</em></p>
 <p>.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。</p>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>DNVM/DNX/DNU都已经被废弃了，现在有了全新的工具<a href="https://github.com/dotnet/cli">DotNet CLI</a>，以及统一的域名<a href="http://dot.net">dot.net</a>，找到对应平台的运行时安装即可。</p>
+<ul>
+<li>Windows （选择一个即可）<ul>
+<li>运行时+CLI工具：<a href=".NET Core SDK Installer">.NET Core SDK Installer</a></li>
+<li>SDK+VS集成：<a href="https://go.microsoft.com/fwlink/?LinkId=798481">.NET Core Tooling Preview 1 for Visual Studio 2015</a></li>
+</ul>
+</li>
+<li><p>CentOS 运行以下命令</p>
+<ul>
+<li><p>需要先安装libunwind，全新安装以来组件见<a href="https://github.com/dotnet/cli/blob/rel/1.0.0/Documentation/cli-prerequisites.md">文档</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y libunwind</div></pre></td></tr></table></figure>
+</li>
+<li><p>接着安装sdk</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl <span class="_">-s</span>SL https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0-preview1/scripts/obtain/dotnet-install.sh | bash /dev/stdin --version 1.0.0-preview1-002702 --install-dir ~/dotnet</div><div class="line">sudo ln <span class="_">-s</span> ~/dotnet/dotnet /usr/<span class="built_in">local</span>/bin</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>OSX</p>
+<ul>
+<li><p>可选，删除老版本cli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf /usr/<span class="built_in">local</span>/share/dotnet</div></pre></td></tr></table></figure>
+</li>
+<li><p>需要先安装openssl</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">brew update</div><div class="line">brew install openssl</div><div class="line">brew link --force openssl</div></pre></td></tr></table></figure>
+</li>
+<li><p>接着下载安装<a href="https://go.microsoft.com/fwlink/?LinkID=798400">.Net Core SDK Installer</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>如果要尝试最新版，直接在<a href="https://github.com/dotnet/cli">DotNet CLI</a>下载对应版本即可。</p>
+<p><em>DNVM未来说不准还会回归，用来管理运行时，现在这样下载安装确实很不方便</em></p>
           
       
     </div>
@@ -513,7 +545,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="Hexo命令使用"><a href="#Hexo命令使用" class="headerlink" title="Hexo命令使用"></a>Hexo命令使用</h1><p>常用的就那么几个命令<br>
+              <h2 id="Hexo命令使用"><a href="#Hexo命令使用" class="headerlink" title="Hexo命令使用"></a>Hexo命令使用</h2><p>常用的就那么几个命令</p>
+<p>创建文章：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new writting-with-hexo</div></pre></td></tr></table></figure></p>
+<p>生成html：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure></p>
+<p>清理缓存及静态文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure></p>
+<p>启动本地服务器测试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure></p>
+<p>通过deployer发布<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure></p>
           
       
     </div>
@@ -577,7 +614,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><p>首先需要安装<a href="https://nodejs.org">Nodejs</a>环境，然后使用npm安装Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
+              <h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>首先需要安装<a href="https://nodejs.org">Nodejs</a>环境，然后使用npm安装Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
+<h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>通过以下命令初始化博客到blog目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init blog</div></pre></td></tr></table></figure></p>
           
       
     </div>
@@ -641,7 +679,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：<br>
+              <p>在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">FATAL bash: /dev/tty: No such device or address</div><div class="line">error: failed to execute prompt script (<span class="built_in">exit</span> code 1)</div><div class="line">fatal: could not <span class="built_in">read</span> Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: Invalid argument</div><div class="line"></div><div class="line">Error: bash: /dev/tty: No such device or address</div><div class="line">error: failed to execute prompt script (<span class="built_in">exit</span> code 1)</div><div class="line">fatal: could not <span class="built_in">read</span> Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: Invalid argument</div><div class="line"></div><div class="line">    at ChildProcess.&lt;anonymous&gt; (...\node_modules\hexo-util\lib\spawn.js:37:17)</div><div class="line">    at emitTwo (events.js:100:13)</div><div class="line">    at ChildProcess.emit (events.js:185:7)</div><div class="line">    at ChildProcess.cp.emit (...\node_modules\cross-spawn-async\lib\enoent.js:37:29)</div><div class="line">    at maybeClose (internal/child_process.js:850:16)</div><div class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)</div></pre></td></tr></table></figure>
           
       
     </div>

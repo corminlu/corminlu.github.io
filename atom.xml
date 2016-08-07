@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://corminlu.github.io/"/>
-  <updated>2016-08-06T11:44:27.734Z</updated>
+  <updated>2016-08-07T08:28:13.461Z</updated>
   <id>http://corminlu.github.io/</id>
   
   <author>
@@ -20,11 +20,32 @@
     <link href="http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/"/>
     <id>http://corminlu.github.io/2016/08/06/prepare-app-to-submition-to-app-store/</id>
     <published>2016-08-06T10:35:55.000Z</published>
-    <updated>2016-08-06T11:44:27.734Z</updated>
+    <updated>2016-08-07T08:28:13.461Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;记录一下上架到AppStore的准备工作&lt;/p&gt;
+&lt;h2 id=&quot;Developer-Center证书相关&quot;&gt;&lt;a href=&quot;#Developer-Center证书相关&quot; class=&quot;headerlink&quot; title=&quot;Developer Center证书相关&quot;&gt;&lt;/a&gt;Developer Center证书相关&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;创建CSR&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;后面会用到，过程略&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建AppId&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设置好需要使用的功能，比如我需要Push Notification、Associated Domains等&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建证书&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;分别需要创建Developement和Distribution类型证书&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS App Development 日常开发使用的&lt;/li&gt;
+&lt;li&gt;Apple Push Notification service SSL (Sandbox) 开发时使用的APNS推送证书&lt;/li&gt;
+&lt;li&gt;App Store and Ad Hoc 上架和adhoc内测使用的正式证书&lt;/li&gt;
+&lt;li&gt;Apple Push Notification service SSL (Sandbox &amp;amp; Production) 正式使用以及adhoc内测使用的推送证书&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;创建证书时为每个证书取好名字，如-appstore、-dev后缀以便区分，然后下载到本地导入到计算机即可。如果要给别人使用，需要导出成.p12格式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建Provisioning Profile&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;根据需要创建&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS App Development 日常开发使用&lt;/li&gt;
+&lt;li&gt;Ad Hoc adhoc内测使用&lt;/li&gt;
+&lt;li&gt;App Store 正式上架使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;创建时同样取好名字以便区分，然后下载双击导入即可&lt;/p&gt;
     
     </summary>
     
@@ -40,11 +61,27 @@
     <link href="http://corminlu.github.io/2016/08/06/my-mac-tools/"/>
     <id>http://corminlu.github.io/2016/08/06/my-mac-tools/</id>
     <published>2016-08-06T09:31:28.000Z</published>
-    <updated>2016-08-06T10:06:50.341Z</updated>
+    <updated>2016-08-07T08:27:22.139Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;记录一下我在&lt;code&gt;Mac&lt;/code&gt;下使用的各种软件工具(部分未使用)&lt;/p&gt;
+&lt;h2 id=&quot;系统工具&quot;&gt;&lt;a href=&quot;#系统工具&quot; class=&quot;headerlink&quot; title=&quot;系统工具&quot;&gt;&lt;/a&gt;系统工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.cocoatech.com/pathfinder/&quot;&gt;Path Finder&lt;/a&gt; 超赞Mac资源文件管理工具，自带shell面板，可以设置成Solarized配色&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bjango.com/mac/istatmenus/&quot;&gt;iStat Menus&lt;/a&gt; 是Mac上最优秀的系统监控工具，能够在系统菜单栏实时监控CPU、GPU、内存、硬盘、网络、温度、电池以及系统时间等&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.imagetasks.com&quot;&gt;iStatistica&lt;/a&gt; 一款高颜值的系统监控工具和iStat Menus类似&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/SamRothCA/Today-Scripts&quot;&gt;Today-Scripts&lt;/a&gt; 可以在通知中心显示CPU/内存/硬盘/电池等使用情况&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.piriform.com/ccleaner/download&quot;&gt;CCleaner&lt;/a&gt; 资深系统垃圾清扫软件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://macpaw.com/cleanmymac&quot;&gt;CleanMyMac&lt;/a&gt; 强大的mac系统清理工具&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.alfredapp.com/&quot;&gt;Alfred&lt;/a&gt; 效率神器，秒杀SpotLight渣渣。有各种&lt;a href=&quot;https://github.com/zenorocha/alfred-workflows&quot;&gt;Workflow&lt;/a&gt;，用起来非常方便&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/nate-parrott/Flashlight&quot;&gt;Flashlight&lt;/a&gt; SpotLight插件，据说和Alfred功能类似&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://macitbetter.com/&quot;&gt;BetterZip&lt;/a&gt; 快速的压缩工具&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/w0lfschild/cDock2&quot;&gt;cDock&lt;/a&gt; 是一款专门为OS X系统定制的小插件。可以帮助我们自定义dock栏的主题，改变其颜色，背景，透明。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.boastr.net/&quot;&gt;BetterTouchTool&lt;/a&gt; 是一款专为Mac用户开发的 Magic Mouse 鼠标 和 TouchPad 的功能增强软件。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://daisydiskapp.com/&quot;&gt;DaisyDisk&lt;/a&gt; 系统清理工具，他可以帮助你了解磁盘使用状况，并进行准确的分析，让你非常轻松就能揪出占用磁盘空间的那些文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cindori.org/software/disksensei/&quot;&gt;Disk Sensei&lt;/a&gt; 是一款磁盘空间管理工具，以直观的区块、数字和颜色来显示硬盘上文件夹，文件大小，且功能强大的Mac磁盘清理软件。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;www.eudic.net/&quot;&gt;EuDic&lt;/a&gt; 欧路词典是一款Mac上的非常优秀的词典工具，支持屏幕取词、划词搜索、生词本、翻译朗读、词库扩展等等功能&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://1password.com/&quot;&gt;1Password&lt;/a&gt; 密码管理工具&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.oneperiodic.com/products/handsoff/&quot;&gt;Hands Off&lt;/a&gt; 是一款在Mac上类似防火墙的工具，它可以帮助你控制程序是否访问网络或者磁盘。并对系统不可信的进程和信息进行监控。&lt;/p&gt;
     
     </summary>
     
@@ -58,11 +95,13 @@
     <link href="http://corminlu.github.io/2016/08/06/my-mac-dev-tools/"/>
     <id>http://corminlu.github.io/2016/08/06/my-mac-dev-tools/</id>
     <published>2016-08-06T07:22:10.000Z</published>
-    <updated>2016-08-06T09:46:11.159Z</updated>
+    <updated>2016-08-07T08:27:53.152Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;记录一下我在&lt;code&gt;Mac&lt;/code&gt;下使用的开发工具(部分未使用过)&lt;/p&gt;
+&lt;h2 id=&quot;XCode&quot;&gt;&lt;a href=&quot;#XCode&quot; class=&quot;headerlink&quot; title=&quot;XCode&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://developer.apple.com/xcode/&quot;&gt;XCode&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这个无需解释&lt;/p&gt;
+&lt;h3 id=&quot;Alcatraz&quot;&gt;&lt;a href=&quot;#Alcatraz&quot; class=&quot;headerlink&quot; title=&quot;Alcatraz&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/alcatraz/Alcatraz&quot;&gt;Alcatraz&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;XCode的插件管理工具，支持XCode 7+&lt;br&gt;&lt;img src=&quot;http://alcatraz.io/images/screenshot@2x.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -78,11 +117,19 @@
     <link href="http://corminlu.github.io/2016/08/06/my-mac-shells/"/>
     <id>http://corminlu.github.io/2016/08/06/my-mac-shells/</id>
     <published>2016-08-06T04:43:49.000Z</published>
-    <updated>2016-08-06T09:24:17.870Z</updated>
+    <updated>2016-08-07T08:27:43.642Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;记录一下我在&lt;code&gt;Mac&lt;/code&gt;下使用的各种Shell工具&lt;/p&gt;
+&lt;h2 id=&quot;RubyGems&quot;&gt;&lt;a href=&quot;#RubyGems&quot; class=&quot;headerlink&quot; title=&quot;RubyGems&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://rubygems.org&quot;&gt;RubyGems&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;系统自带，有一部分工具管理靠它。&lt;/p&gt;
+&lt;p&gt;为了能正常使用，最好把源换成&lt;code&gt;https://ruby.taobao.org/&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Homebrew&quot;&gt;&lt;a href=&quot;#Homebrew&quot; class=&quot;headerlink&quot; title=&quot;Homebrew&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;大部分工具都靠brew和brew cask来管理，实在是太方便了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装方法&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/usr/bin/ruby &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;~/.bash_profile&lt;/code&gt;增加以下行&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# for brew install&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; PATH=/usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin:&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;cask必不可少&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;brew install cask&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;不过有些时候cask里的软件更新比较慢&lt;/p&gt;
+&lt;!--corminlu.github.io--&gt;
     
     </summary>
     
@@ -98,12 +145,14 @@
     <link href="http://corminlu.github.io/2016/07/23/https-and-ios-ats/"/>
     <id>http://corminlu.github.io/2016/07/23/https-and-ios-ats/</id>
     <published>2016-07-23T09:31:24.000Z</published>
-    <updated>2016-07-23T09:59:48.888Z</updated>
+    <updated>2016-08-07T08:31:53.299Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。&lt;/p&gt;
 &lt;p&gt;根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。&lt;/p&gt;
+&lt;h2 id=&quot;检测并修复&quot;&gt;&lt;a href=&quot;#检测并修复&quot; class=&quot;headerlink&quot; title=&quot;检测并修复&quot;&gt;&lt;/a&gt;检测并修复&lt;/h2&gt;&lt;p&gt;可通过&lt;a href=&quot;https://www.ssllabs.com/ssltest/&quot;&gt;SSL LABS&lt;/a&gt;进行在线检测。&lt;/p&gt;
+&lt;p&gt;或者下载&lt;a href=&quot;https://www.nartac.com/Products/IISCrypto&quot;&gt;IISCrypto&lt;/a&gt;，直接点”Best Practices”设置你的Web服务器，这样默认就启用了TLS1.2并且能支持ATS，然后通过Site Scanner进行检测。&lt;/p&gt;
     
     </summary>
     
@@ -119,12 +168,16 @@
     <link href="http://corminlu.github.io/2016/07/23/wkwebview-bug/"/>
     <id>http://corminlu.github.io/2016/07/23/wkwebview-bug/</id>
     <published>2016-07-23T07:58:31.000Z</published>
-    <updated>2016-07-23T09:21:51.624Z</updated>
+    <updated>2016-08-07T08:30:40.002Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;从iOS 8开始引入了WKWebView，而由于iOS 8以下的设备已经非常少了，项目直接iOS 8起步，自然而然的把UIWebView换成了吹的很厉害的WKWebView。&lt;/p&gt;
 &lt;p&gt;平常只是拿来展示网页都还比较正常，然而想做更多一些功能的时候却掉进了坑里。&lt;/p&gt;
+&lt;h2 id=&quot;POST内容为空&quot;&gt;&lt;a href=&quot;#POST内容为空&quot; class=&quot;headerlink&quot; title=&quot;POST内容为空&quot;&gt;&lt;/a&gt;POST内容为空&lt;/h2&gt;&lt;p&gt;使用WKWebView用POST方式提交数据，演示代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *post = [&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; stringWithFormat: &lt;span class=&quot;string&quot;&gt;@&quot;key1=%@&amp;amp;key2=%@&quot;&lt;/span&gt;, key1, key2];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSData&lt;/span&gt; *postData = [post dataUsingEncoding:&lt;span class=&quot;built_in&quot;&gt;NSUTF8StringEncoding&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *contentLength = [&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; stringWithFormat:&lt;span class=&quot;string&quot;&gt;@&quot;%d&quot;&lt;/span&gt;, postData.length];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSURL&lt;/span&gt; *url = [&lt;span class=&quot;built_in&quot;&gt;NSURL&lt;/span&gt; URLWithString:&lt;span class=&quot;string&quot;&gt;@&quot;http://www.example.com/api&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSMutableURLRequest&lt;/span&gt; *request = [&lt;span class=&quot;built_in&quot;&gt;NSMutableURLRequest&lt;/span&gt; requestWithURL:url];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[request setHTTPMethod:&lt;span class=&quot;string&quot;&gt;@&quot;POST&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[request setHTTPBody:postData];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[request setValue:contentLength forHTTPHeaderField:&lt;span class=&quot;string&quot;&gt;@&quot;Content-Length&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[request setValue:&lt;span class=&quot;string&quot;&gt;@&quot;application/x-www-form-urlencoded&quot;&lt;/span&gt; forHTTPHeaderField:&lt;span class=&quot;string&quot;&gt;@&quot;Content-Type&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[request setValue:&lt;span class=&quot;string&quot;&gt;@&quot;application/json&quot;&lt;/span&gt; forHTTPHeaderField:&lt;span class=&quot;string&quot;&gt;@&quot;Accept&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[webView loadRequest:request];&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;代码看起来很正常，UIWebView的时候都可以这么用，然而用了WKWebView之后，服务端收到的内容为空，通过Charles监听发现Content-Length为0，而且body也是空的。&lt;/p&gt;
+&lt;p&gt;这是因为WKWebView的bug，暂时是没办法解决了，只能用变通的办法。&lt;/p&gt;
     
     </summary>
     
@@ -140,15 +193,15 @@
     <link href="http://corminlu.github.io/2016/07/23/upgrade-to-dotnet-core-1-final/"/>
     <id>http://corminlu.github.io/2016/07/23/upgrade-to-dotnet-core-1-final/</id>
     <published>2016-07-23T07:25:03.000Z</published>
-    <updated>2016-07-23T09:24:37.111Z</updated>
+    <updated>2016-08-07T08:29:29.088Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;.Net Core 1.0正式版已经发布一段时间了，稳定性又提升了不少，是时候升级了。&lt;/p&gt;
-&lt;h1 id=&quot;卸载旧版本&quot;&gt;&lt;a href=&quot;#卸载旧版本&quot; class=&quot;headerlink&quot; title=&quot;卸载旧版本&quot;&gt;&lt;/a&gt;卸载旧版本&lt;/h1&gt;&lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;卸载RC1&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;卸载旧版本&quot;&gt;&lt;a href=&quot;#卸载旧版本&quot; class=&quot;headerlink&quot; title=&quot;卸载旧版本&quot;&gt;&lt;/a&gt;卸载旧版本&lt;/h2&gt;&lt;h3 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;卸载RC1&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;AspNet5.ENU.RC1_Update1_KB3137909.exe /uninstall&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;卸载RC2&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;DotNetCore.1.0.0-VS2015Tools.Preview1.exe /uninstall&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;如果没卸载干净，请到控制面板手动卸载干净&lt;/p&gt;
-&lt;h2 id=&quot;CentOS&quot;&gt;&lt;a href=&quot;#CentOS&quot; class=&quot;headerlink&quot; title=&quot;CentOS&quot;&gt;&lt;/a&gt;CentOS&lt;/h2&gt;&lt;p&gt;直接删除.Net Core目录即可&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;rm &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; ~/dotnet&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;CentOS&quot;&gt;&lt;a href=&quot;#CentOS&quot; class=&quot;headerlink&quot; title=&quot;CentOS&quot;&gt;&lt;/a&gt;CentOS&lt;/h3&gt;&lt;p&gt;直接删除.Net Core目录即可&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;rm &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; ~/dotnet&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -166,12 +219,12 @@
     <link href="http://corminlu.github.io/2016/07/23/uiimageview-contentmode/"/>
     <id>http://corminlu.github.io/2016/07/23/uiimageview-contentmode/</id>
     <published>2016-07-23T06:56:01.000Z</published>
-    <updated>2016-07-23T07:21:22.536Z</updated>
+    <updated>2016-08-07T08:28:59.489Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。&lt;/p&gt;
-&lt;h1 id=&quot;UIViewContentMode&quot;&gt;&lt;a href=&quot;#UIViewContentMode&quot; class=&quot;headerlink&quot; title=&quot;UIViewContentMode&quot;&gt;&lt;/a&gt;UIViewContentMode&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;UIViewContentMode&lt;/strong&gt;主要可用以下几个属性来改变图片：&lt;/p&gt;
+&lt;h2 id=&quot;UIViewContentMode&quot;&gt;&lt;a href=&quot;#UIViewContentMode&quot; class=&quot;headerlink&quot; title=&quot;UIViewContentMode&quot;&gt;&lt;/a&gt;UIViewContentMode&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;UIViewContentMode&lt;/strong&gt;主要可用以下几个属性来改变图片：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例和UIImageView的frame不一致的时候，会调整图片比例，然后会出现图片拉伸变形&lt;/li&gt;
 &lt;li&gt;UIViewContentModeScaleAspectFit 保持图片比例，按图片最大的边去缩放图片大小，图片高宽比例和UIImageView的frame不一致的时候，可能会出现高度或宽度不够的无法完全填充UIImageView，然后出现白边&lt;/li&gt;
@@ -192,11 +245,11 @@
     <link href="http://corminlu.github.io/2016/06/25/running-dotnet-core-in-docker-container/"/>
     <id>http://corminlu.github.io/2016/06/25/running-dotnet-core-in-docker-container/</id>
     <published>2016-06-25T07:43:41.000Z</published>
-    <updated>2016-06-25T09:44:52.711Z</updated>
+    <updated>2016-08-07T08:28:49.323Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Docker运行环境&quot;&gt;&lt;a href=&quot;#Docker运行环境&quot; class=&quot;headerlink&quot; title=&quot;Docker运行环境&quot;&gt;&lt;/a&gt;Docker运行环境&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt;最近发布了针对各平台Win/Mac/Linux的&lt;a href=&quot;https://www.docker.com/products/docker&quot;&gt;全新版本&lt;/a&gt;。&lt;/p&gt;
+      &lt;h2 id=&quot;Docker运行环境&quot;&gt;&lt;a href=&quot;#Docker运行环境&quot; class=&quot;headerlink&quot; title=&quot;Docker运行环境&quot;&gt;&lt;/a&gt;Docker运行环境&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt;最近发布了针对各平台Win/Mac/Linux的&lt;a href=&quot;https://www.docker.com/products/docker&quot;&gt;全新版本&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.docker.com/products/docker#/windows&quot;&gt;Docker for Windows&lt;/a&gt;基于Hyper-V运行，&lt;a href=&quot;https://www.docker.com/products/docker#/mac&quot;&gt;Docker for Mac&lt;/a&gt;基于&lt;a href=&quot;https://github.com/docker/HyperKit/&quot;&gt;HyperKit&lt;/a&gt;（早期版本的Docker for Mac Beta是基于&lt;a href=&quot;https://github.com/mist64/xhyve&quot;&gt;xhyve&lt;/a&gt;，不过HyperKit还是基于xhyve开发的）。&lt;/p&gt;
     
     </summary>
@@ -242,12 +295,44 @@
     <link href="http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/"/>
     <id>http://corminlu.github.io/2016/06/11/migration-to-aspnet-core-rc2/</id>
     <published>2016-06-11T01:21:53.000Z</published>
-    <updated>2016-06-25T07:49:16.829Z</updated>
+    <updated>2016-08-07T08:31:44.884Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&lt;em&gt;本文可能仅适用于.Net Core RC2，据说RTM会把目前的一些json配置文件给废弃掉，以及csproj回归&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;.Net Core RC2发布将近一个月，从DNX到RC2，API经过比较大的变化，不过目前基本上都稳定下来了，试着将DNX WebApi项目迁移了一下，运行还比较稳定。估计等到RTM发布不会有太大都变动，现在可以开始尝尝鲜了。&lt;/p&gt;
+&lt;h2 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h2&gt;&lt;p&gt;DNVM/DNX/DNU都已经被废弃了，现在有了全新的工具&lt;a href=&quot;https://github.com/dotnet/cli&quot;&gt;DotNet CLI&lt;/a&gt;，以及统一的域名&lt;a href=&quot;http://dot.net&quot;&gt;dot.net&lt;/a&gt;，找到对应平台的运行时安装即可。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows （选择一个即可）&lt;ul&gt;
+&lt;li&gt;运行时+CLI工具：&lt;a href=&quot;.NET Core SDK Installer&quot;&gt;.NET Core SDK Installer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SDK+VS集成：&lt;a href=&quot;https://go.microsoft.com/fwlink/?LinkId=798481&quot;&gt;.NET Core Tooling Preview 1 for Visual Studio 2015&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;CentOS 运行以下命令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;需要先安装libunwind，全新安装以来组件见&lt;a href=&quot;https://github.com/dotnet/cli/blob/rel/1.0.0/Documentation/cli-prerequisites.md&quot;&gt;文档&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum install -y libunwind&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接着安装sdk&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;curl &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;SL https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0-preview1/scripts/obtain/dotnet-install.sh | bash /dev/stdin --version 1.0.0-preview1-002702 --install-dir ~/dotnet&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; ~/dotnet/dotnet /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;OSX&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;可选，删除老版本cli&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo rm -rf /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/share/dotnet&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;需要先安装openssl&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;brew update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;brew install openssl&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;brew link --force openssl&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接着下载安装&lt;a href=&quot;https://go.microsoft.com/fwlink/?LinkID=798400&quot;&gt;.Net Core SDK Installer&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要尝试最新版，直接在&lt;a href=&quot;https://github.com/dotnet/cli&quot;&gt;DotNet CLI&lt;/a&gt;下载对应版本即可。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;DNVM未来说不准还会回归，用来管理运行时，现在这样下载安装确实很不方便&lt;/em&gt;&lt;/p&gt;
     
     </summary>
     
@@ -289,7 +374,7 @@
     <link href="http://corminlu.github.io/2016/04/16/chocolatey-windows-package-manager/"/>
     <id>http://corminlu.github.io/2016/04/16/chocolatey-windows-package-manager/</id>
     <published>2016-04-16T10:07:15.000Z</published>
-    <updated>2016-04-16T11:16:29.756Z</updated>
+    <updated>2016-08-07T08:22:07.467Z</updated>
     
     <summary type="html">
     
@@ -309,7 +394,7 @@
     <link href="http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/"/>
     <id>http://corminlu.github.io/2016/04/16/run-aspnet-5-on-centos/</id>
     <published>2016-04-16T08:10:04.000Z</published>
-    <updated>2016-06-25T07:49:13.250Z</updated>
+    <updated>2016-08-07T08:28:36.827Z</updated>
     
     <summary type="html">
     
@@ -335,11 +420,16 @@
     <link href="http://corminlu.github.io/2016/03/26/writting-with-hexo/"/>
     <id>http://corminlu.github.io/2016/03/26/writting-with-hexo/</id>
     <published>2016-03-26T14:26:13.000Z</published>
-    <updated>2016-03-26T14:43:00.292Z</updated>
+    <updated>2016-08-07T08:30:24.191Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Hexo命令使用&quot;&gt;&lt;a href=&quot;#Hexo命令使用&quot; class=&quot;headerlink&quot; title=&quot;Hexo命令使用&quot;&gt;&lt;/a&gt;Hexo命令使用&lt;/h1&gt;&lt;p&gt;常用的就那么几个命令&lt;br&gt;
+      &lt;h2 id=&quot;Hexo命令使用&quot;&gt;&lt;a href=&quot;#Hexo命令使用&quot; class=&quot;headerlink&quot; title=&quot;Hexo命令使用&quot;&gt;&lt;/a&gt;Hexo命令使用&lt;/h2&gt;&lt;p&gt;常用的就那么几个命令&lt;/p&gt;
+&lt;p&gt;创建文章：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo new writting-with-hexo&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;生成html：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;清理缓存及静态文件：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo clean&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;启动本地服务器测试：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo s&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;通过deployer发布&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo d&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -355,11 +445,12 @@
     <link href="http://corminlu.github.io/2016/03/26/hexo-install-and-config/"/>
     <id>http://corminlu.github.io/2016/03/26/hexo-install-and-config/</id>
     <published>2016-03-26T13:23:00.000Z</published>
-    <updated>2016-03-26T14:22:38.814Z</updated>
+    <updated>2016-08-07T08:32:30.190Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;环境安装&quot;&gt;&lt;a href=&quot;#环境安装&quot; class=&quot;headerlink&quot; title=&quot;环境安装&quot;&gt;&lt;/a&gt;环境安装&lt;/h1&gt;&lt;p&gt;首先需要安装&lt;a href=&quot;https://nodejs.org&quot;&gt;Nodejs&lt;/a&gt;环境，然后使用npm安装Hexo：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;环境安装&quot;&gt;&lt;a href=&quot;#环境安装&quot; class=&quot;headerlink&quot; title=&quot;环境安装&quot;&gt;&lt;/a&gt;环境安装&lt;/h2&gt;&lt;p&gt;首先需要安装&lt;a href=&quot;https://nodejs.org&quot;&gt;Nodejs&lt;/a&gt;环境，然后使用npm安装Hexo：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;初始化博客&quot;&gt;&lt;a href=&quot;#初始化博客&quot; class=&quot;headerlink&quot; title=&quot;初始化博客&quot;&gt;&lt;/a&gt;初始化博客&lt;/h2&gt;&lt;p&gt;通过以下命令初始化博客到blog目录：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo init blog&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -375,11 +466,12 @@
     <link href="http://corminlu.github.io/2016/03/26/hexo-deploy-error-dev-tty-on-windows/"/>
     <id>http://corminlu.github.io/2016/03/26/hexo-deploy-error-dev-tty-on-windows/</id>
     <published>2016-03-26T12:25:00.000Z</published>
-    <updated>2016-03-26T12:44:13.352Z</updated>
+    <updated>2016-08-07T08:22:32.326Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：&lt;br&gt;
+      &lt;p&gt;在Windows下用Hexo Deploy发布到GitHub Pages时出现/dev/tty错误：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;FATAL bash: /dev/tty: No such device or address&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;error: failed to execute prompt script (&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; code 1)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fatal: could not &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; Username &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;https://github.com&#39;&lt;/span&gt;: Invalid argument&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Error: bash: /dev/tty: No such device or address&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;error: failed to execute prompt script (&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; code 1)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fatal: could not &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; Username &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;https://github.com&#39;&lt;/span&gt;: Invalid argument&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at ChildProcess.&amp;lt;anonymous&amp;gt; (...\node_modules\hexo-util\lib\spawn.js:37:17)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at emitTwo (events.js:100:13)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at ChildProcess.emit (events.js:185:7)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at ChildProcess.cp.emit (...\node_modules\cross-spawn-async\lib\enoent.js:37:29)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at maybeClose (internal/child_process.js:850:16)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

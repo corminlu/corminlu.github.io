@@ -16,18 +16,24 @@
 
 
 <meta name="description" content="HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。
-根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。">
+根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。
+检测并修复可通过SSL LABS进行在线检测。
+或者下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为服务器启用HTTPS以及iOS的ATS支持">
 <meta property="og:url" content="http://corminlu.github.io/2016/07/23/https-and-ios-ats/index.html">
 <meta property="og:site_name" content="Cormin Lu's Blog">
 <meta property="og:description" content="HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。
-根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。">
-<meta property="og:updated_time" content="2016-07-23T09:59:48.888Z">
+根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。
+检测并修复可通过SSL LABS进行在线检测。
+或者下">
+<meta property="og:updated_time" content="2016-08-07T08:31:53.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为服务器启用HTTPS以及iOS的ATS支持">
 <meta name="twitter:description" content="HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。
-根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。">
+根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。
+检测并修复可通过SSL LABS进行在线检测。
+或者下">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -261,15 +267,15 @@
           
         <p>HTTPS的好处就不多说了，可根据实际情况选择免费的证书(Let’s Encryption、StarSSL、Wosign)，或者更高级的收费的证书(Symantec VeriSign、GlobalSign、GeoTrust、Comodo)等。</p>
 <p>根据安全建议，最好启用TLS 1.0~1.2，同时禁用弱密码协议如SSL 2.0~3.0、MD5等。</p>
-<a id="more"></a>
-<h1 id="检测并修复"><a href="#检测并修复" class="headerlink" title="检测并修复"></a>检测并修复</h1><p>可通过<a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="external">SSL LABS</a>进行在线检测。</p>
+<h2 id="检测并修复"><a href="#检测并修复" class="headerlink" title="检测并修复"></a>检测并修复</h2><p>可通过<a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="external">SSL LABS</a>进行在线检测。</p>
 <p>或者下载<a href="https://www.nartac.com/Products/IISCrypto" target="_blank" rel="external">IISCrypto</a>，直接点”Best Practices”设置你的Web服务器，这样默认就启用了TLS1.2并且能支持ATS，然后通过Site Scanner进行检测。</p>
-<h1 id="绑定证书"><a href="#绑定证书" class="headerlink" title="绑定证书"></a>绑定证书</h1><p>在IIS上导入证书，并为你的域名启用https协议，选择申请的证书。</p>
-<h1 id="为iOS绑定证书"><a href="#为iOS绑定证书" class="headerlink" title="为iOS绑定证书"></a>为iOS绑定证书</h1><p>运行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"openssl s_client -connect www.example.com:443 &lt;/dev/null 2&gt;/dev/null | openssl x509 -outform DER &gt; https.cer"</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="绑定证书"><a href="#绑定证书" class="headerlink" title="绑定证书"></a>绑定证书</h2><p>在IIS上导入证书，并为你的域名启用https协议，选择申请的证书。</p>
+<h2 id="为iOS绑定证书"><a href="#为iOS绑定证书" class="headerlink" title="为iOS绑定证书"></a>为iOS绑定证书</h2><p>运行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"openssl s_client -connect www.example.com:443 &lt;/dev/null 2&gt;/dev/null | openssl x509 -outform DER &gt; https.cer"</span></div></pre></td></tr></table></figure></p>
 <p>导出公开二进制证书https.cer，把它放到XCode工程中</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *certFilePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"https"</span> ofType:<span class="string">@"cer"</span>];</div><div class="line"><span class="built_in">NSData</span> *certData = [<span class="built_in">NSData</span> dataWithContentsOfFile:certFilePath];</div><div class="line"><span class="built_in">NSSet</span> *certSet = [<span class="built_in">NSSet</span> setWithObject:certData];</div><div class="line">AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:certSet];</div><div class="line">securityPolicy.allowInvalidCertificates = <span class="literal">NO</span>;</div><div class="line">securityPolicy.validatesDomainName = <span class="literal">YES</span>;</div><div class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</div><div class="line">manager.securityPolicy  = securityPolicy;</div></pre></td></tr></table></figure>
 <p>这样就可以安全使用ATS了，不过得注意证书过期导致APP不可用问题，所以要勤加更新</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://serverfault.com/questions/724077/how-to-configure-iis-7-5-ssl-tls-to-work-with-ios-9-ats" target="_blank" rel="external">How to configure IIS 7.5 SSL \ TLS to work with iOS 9 ATS</a><br><a href="https://www.hass.de/content/setup-your-iis-ssl-perfect-forward-secrecy-and-tls-12" target="_blank" rel="external">Setup your IIS for SSL Perfect Forward Secrecy and TLS 1.2</a><br><a href="https://github.com/ChenYilong/iOS9AdaptationTips" target="_blank" rel="external">iOS9AdaptationTips</a><br><a href="http://www.jianshu.com/p/4102b817ff2f" target="_blank" rel="external">正确使用 AFNetworking 的 SSL 保证网络安全</a><br><a href="http://infiniteqin.github.io/2016/03/09/AFNetworking%E8%AE%BE%E7%BD%AESSL%E9%93%BE%E6%8E%A5/" target="_blank" rel="external">AFNetworking设置SSL链接</a><br><a href="https://limh.me/2008_tls.html" target="_blank" rel="external">https://limh.me/2008_tls.html</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://serverfault.com/questions/724077/how-to-configure-iis-7-5-ssl-tls-to-work-with-ios-9-ats" target="_blank" rel="external">How to configure IIS 7.5 SSL \ TLS to work with iOS 9 ATS</a><br><a href="https://www.hass.de/content/setup-your-iis-ssl-perfect-forward-secrecy-and-tls-12" target="_blank" rel="external">Setup your IIS for SSL Perfect Forward Secrecy and TLS 1.2</a><br><a href="https://github.com/ChenYilong/iOS9AdaptationTips" target="_blank" rel="external">iOS9AdaptationTips</a><br><a href="http://www.jianshu.com/p/4102b817ff2f" target="_blank" rel="external">正确使用 AFNetworking 的 SSL 保证网络安全</a><br><a href="http://infiniteqin.github.io/2016/03/09/AFNetworking%E8%AE%BE%E7%BD%AESSL%E9%93%BE%E6%8E%A5/" target="_blank" rel="external">AFNetworking设置SSL链接</a><br><a href="https://limh.me/2008_tls.html" target="_blank" rel="external">https://limh.me/2008_tls.html</a></p>
 
       
     </div>
@@ -281,7 +287,7 @@
         <p><span>本文标题:</span><a href="/2016/07/23/https-and-ios-ats/">为服务器启用HTTPS以及iOS的ATS支持</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Cormin Lu</a></p>
         <p><span>发布时间:</span>2016-07-23, 17:31:24</p>
-        <p><span>最后更新:</span>2016-07-23, 17:59:48</p>
+        <p><span>最后更新:</span>2016-08-07, 16:31:53</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/07/23/https-and-ios-ats/" title="为服务器启用HTTPS以及iOS的ATS支持">http://corminlu.github.io/2016/07/23/https-and-ios-ats/</a>
             <span class="copy-path" data-clipboard-text="原文: http://corminlu.github.io/2016/07/23/https-and-ios-ats/　　作者: Cormin Lu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -317,7 +323,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#检测并修复"><span class="toc-number">1.</span> <span class="toc-text">检测并修复</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绑定证书"><span class="toc-number">2.</span> <span class="toc-text">绑定证书</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为iOS绑定证书"><span class="toc-number">3.</span> <span class="toc-text">为iOS绑定证书</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检测并修复"><span class="toc-number">1.</span> <span class="toc-text">检测并修复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定证书"><span class="toc-number">2.</span> <span class="toc-text">绑定证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为iOS绑定证书"><span class="toc-number">3.</span> <span class="toc-text">为iOS绑定证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
