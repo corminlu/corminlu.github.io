@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>使UIImageView正确显示图片 | Cormin Lu&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Cormin Lu" />
+
+
+
+<meta name="description" content="经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。
 UIViewContentModeUIViewContentMode主要可用以下几个属性来改变图片：
 
 UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例">
@@ -25,151 +34,205 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
 UIViewContentModeUIViewContentMode主要可用以下几个属性来改变图片：
 
 UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片高宽比例">
-  
-    <link rel="alternative" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="https://avatars3.githubusercontent.com/u/1397003?v=3&s=140">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Cormin Lu&#39;s Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="https://avatars3.githubusercontent.com/u/1397003?v=3&s=140">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>使UIImageView正确显示图片 | Cormin Lu&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
 <body>
   <div id="container">
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
-			
-		</a>
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Cormin Lu</a></h1>
+        </hgroup>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Cormin Lu</a></h1>
-		</hgroup>
+        
+        <p class="header-subtitle">坐井观天</p>
+        
 
-		
-		<p class="header-subtitle">坐井观天</p>
-		
+        
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">归档</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 16px;">Hexo</a> <a href="/tags/aspnet/" style="font-size: 18px;">aspnet</a> <a href="/tags/blog/" style="font-size: 16px;">blog</a> <a href="/tags/centos/" style="font-size: 12px;">centos</a> <a href="/tags/chocolatey/" style="font-size: 10px;">chocolatey</a> <a href="/tags/dev/" style="font-size: 20px;">dev</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/dotnet-core/" style="font-size: 18px;">dotnet core</a> <a href="/tags/ios/" style="font-size: 16px;">ios</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/mac/" style="font-size: 14px;">mac</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/vs/" style="font-size: 10px;">vs</a>
-					</div>
-				</section>
-				
-				
-				
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-				
-			</div>
-		</div>
-	</header>				
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives">归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/corminlu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aspnet/">aspnet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/">centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chocolatey/">chocolatey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dev/">dev</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet-core/">dotnet core</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linode/">linode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vs/">vs</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Cormin Lu</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				
-					<img lazy-src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="js-avatar">
-				
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Cormin Lu</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">坐井观天</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">归档</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/corminlu" title="github">github</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Cormin Lu</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars3.githubusercontent.com/u/1397003?v=3&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Cormin Lu</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">坐井观天</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives">归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/corminlu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-
-      <div class="body-wrap"><article id="post-uiimageview-contentmode" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><!--corminlu.github.io--><article id="post-uiimageview-contentmode" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/07/23/uiimageview-contentmode/" class="article-date">
-  	<time datetime="2016-07-23T06:56:01.000Z" itemprop="datePublished">2016-07-23</time>
+      <time datetime="2016-07-23T06:56:01.000Z" itemprop="datePublished">2016-07-23</time>
 </a>
+
+
     </div>
   
   <div class="article-inner">
@@ -189,11 +252,11 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
       
       <div class="article-info article-info-post">
         
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-	</div>
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dev/">dev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+    </div>
 
         <div class="clearfix"></div>
       </div>
@@ -201,6 +264,7 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>经常会遇到使用的图片和UIImageView的frame比例不一样的时候，出现图片变形、白边等情况，这个时候可以通过UIImageView的contentMode属性来解决。</p>
 <h1 id="UIViewContentMode"><a href="#UIViewContentMode" class="headerlink" title="UIViewContentMode"></a>UIViewContentMode</h1><p><strong>UIViewContentMode</strong>主要可用以下几个属性来改变图片：</p>
 <ul>
@@ -221,28 +285,88 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/23/uiimageview-contentmode/">使UIImageView正确显示图片</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Cormin Lu</a></p>
+        <p><span>发布时间:</span>2016-07-23, 14:56:01</p>
+        <p><span>最后更新:</span>2016-07-23, 15:21:22</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/23/uiimageview-contentmode/" title="使UIImageView正确显示图片">http://corminlu.github.io/2016/07/23/uiimageview-contentmode/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://corminlu.github.io/2016/07/23/uiimageview-contentmode/　　作者: Cormin Lu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
         
-          升级到.Net Core 1.0正式版
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/">
+                    升级到.Net Core 1.0正式版
+                </a>
+            </div>
         
-      </div>
-    </a>
-  
-  
-    <a href="/2016/06/25/running-dotnet-core-in-docker-container/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在Docker容器中运行.Net Core应用</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/06/25/running-dotnet-core-in-docker-container/">
+                    在Docker容器中运行.Net Core应用
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UIViewContentMode"><span class="toc-number">1.</span> <span class="toc-text">UIViewContentMode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"使UIImageView正确显示图片　| Cormin Lu's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -250,62 +374,122 @@ UIViewContentModeScaleToFill 缩放图片来填充UIImageView的frame，图片�
 
 
 
-<section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'corminlu'; // required: replace example with your forum shortname
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/07/23/uiimageview-contentmode/" data-title="使UIImageView正确显示图片" data-url="http://corminlu.github.io/2016/07/23/uiimageview-contentmode/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"corminlu"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
+        
+    </script>
+    
+    <script> loadComment(); </script>
 
 </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-        <div class="copy-right clearfix">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></div>
-        <div class="footer-left">
-    		&copy; 2016 <a href="http://corminlu.github.io">Cormin Lu</a>
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/07/23/upgrade-to-dotnet-core-1-final/" title="上一篇: 升级到.Net Core 1.0正式版">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/06/25/running-dotnet-core-in-docker-container/" title="下一篇: 在Docker容器中运行.Net Core应用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-  </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/prepare-app-to-submition-to-app-store/">AppStore上架准备</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/my-mac-tools/">我的Mac软件工具清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/my-mac-dev-tools/">我的Mac开发工具清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/my-mac-shells/">我的Mac Shell清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/https-and-ios-ats/">为服务器启用HTTPS以及iOS的ATS支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/wkwebview-bug/">WKWebView的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/upgrade-to-dotnet-core-1-final/">升级到.Net Core 1.0正式版</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/uiimageview-contentmode/">使UIImageView正确显示图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/running-dotnet-core-in-docker-container/">在Docker容器中运行.Net Core应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/dotnet-core-segmentation-fault/">.Net Core Segmentation Fault错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/11/migration-to-aspnet-core-rc2/">迁移到Asp.Net Core RC2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/vs-web-tools-node-version-too-lower-bug/">Visual Studio内置Node版本过低导致Bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/chocolatey-windows-package-manager/">chocolatey：windows下的包管理工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/run-aspnet-5-on-centos/">在CentOS上运行Asp.Net 5</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/writting-with-hexo/">Hexo使用及语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/hexo-install-and-config/">Hexo安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/hexo-deploy-error-dev-tty-on-windows/">Windows环境Hexo Deploy发布到GitHub出现/dev/tty错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/start-static-blog-with-hexo/">开启Hexo静态博客之旅</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+<!--corminlu.github.io--></div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Cormin Lu
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
 
 
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
 <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+            
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   </div>
 </body>
 </html>
